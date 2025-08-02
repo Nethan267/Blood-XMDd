@@ -11,7 +11,7 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let about = `
-*╭━━〔 CASEYRHODES XMD 〕━━┈⊷*
+*╭━━〔 BLOOD XMD 〕━━┈⊷*
 
 *👋 HELLO ${pushname}*
 
@@ -19,11 +19,10 @@ let about = `
 *╭━━━〔 MY ABOUT 〕━━━┈⊷*
 *┃★╭──────────────*
 *┃★│* *ᴡᴇʟᴄᴏᴍᴇ ɪᴛs ᴄᴀsᴇʏʀʜᴏᴅᴇs-xᴍᴅ-ʙᴏᴛ*
-*┃★│* *ᴄʀᴇᴀᴛᴇʀ : ᴄᴀsᴇʏʀʜᴏᴅᴇs*
-*┃★│* *ʀᴇᴀʟ ɴᴀᴍᴇ : ᴍʀ ᴄᴀsᴇʏʀʜᴏᴅᴇs*
-*┃★│* *ᴘᴜʙʟɪᴄ ɴᴀᴍᴇ : ᴄᴀsᴇʏʀʜᴏᴅᴇs-xᴍᴅ*
-*┃★│* *ᴀɢᴇ : 18 ʏᴇᴀʀ*
-*┃★│* *ᴄɪᴛʏ : ᴘᴇʀsɴᴏʟ ʜᴀɪ*
+*┃★│* *ᴄʀᴇᴀᴛᴇʀ : sachithra madusanka*
+*┃★│* *ᴘᴜʙʟɪᴄ ɴᴀᴍᴇ : blood-xᴍᴅ*
+*┃★│* *ᴀɢᴇ : 17 ʏᴇᴀʀ*
+*┃★│* *ᴄɪᴛʏ : kegalla*
 *┃★│* *ᴀ sɪᴍᴘʟᴇ ᴡʜᴀᴛsᴀᴘᴘ ᴅᴇᴠᴇʟᴘᴏʀ*
 *┃★╰──────────────*
 *╰━━━━━━━━━━━━━━━┈⊷*
@@ -32,12 +31,9 @@ let about = `
 *[ • SPECIAL THANKS FOR • ]*
 *╭━━━〔 THANKS TO 〕━━━┈⊷*
 *┃★╭──────────────*
-*┃★│* *▢sʜᴀᴋᴀʀ(ʟᴏᴠᴇʟʏ ᴅᴇᴠɪʟ)*
-*┃★│* *▢ᴀʜᴍᴇᴅ(xɪᴋʀᴀᴛᴏsx)*
-*┃★│* *▢ᴜᴍᴀʀ(ᴅᴀʀᴋ ᴅᴇᴠɪʟ⁷¹⁹)*
-*┃★│* *▢ʙᴇʀᴀ ᴛᴇᴄʜ(sɪʟᴇɪɴᴛ ʟᴏᴠᴇʀ)*
-*┃★│* *▢ᴄᴀsᴇʏʀʜᴏᴅᴇs(ᴅᴊ)*
-*┃★│* *▢ᴀʜꜱᴀɴ ꜱɪᴀʟ*
+*┃★│* *▢bot asiss = mr dileesha *
+*┃★│* *▢age = 15*
+*┃★│* *▢city = kurunagala*
 *┃★╰──────────────*
 *╰━━━━━━━━━━━━━━━┈⊷*
 
@@ -52,8 +48,8 @@ await conn.sendMessage(from,{image:{url:`https://i.ibb.co/m5Bcq64y/caseyrhodes-t
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363302677217436@newsletter',
-      newsletterName: 'CASEYRHODES-XMD',
+      newsletterJid: '120363419102725912@newsletter',
+      newsletterName: 'blood-XMD',
       serverMessageId: 999
     }
   }
