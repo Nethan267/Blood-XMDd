@@ -38,7 +38,7 @@ async (conn, mek, m, { from, reply }) => {
         pluginListCache = plugins;
 
         // Construct a list of plugins
-        let pluginList = "📂 *CASEYRHODES-XMD PLUGINS:*\n\n";
+        let pluginList = "📂 *BLOOD-XMD PLUGINS:*\n\n";
         plugins.forEach((plugin, index) => {
             pluginList += `${index + 1}. ${plugin.name}\n> `; // Add plugin name to the list
         });
@@ -106,8 +106,8 @@ async (conn, mek, m, { from, reply, args, senderNumber }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363302677217436@newsletter',
-                    newsletterName: 'ᴄᴀsᴇʏʀʜᴏᴅᴇs ʜᴇʟᴘ🍁',
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: 'BLOOD XMD HELP',
                     serverMessageId: 143
                 }
             }
