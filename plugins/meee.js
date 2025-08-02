@@ -45,11 +45,11 @@ cmd({
       forwardingScore: 55555,
       isForwarded: true,
       externalAdReply: {
-        title: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐓𝐄𝐂𝐇",
+        title: "𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃",
         body: "𝐓𝝰̚𝐠͜͡𝗲 𝝪𝐨̚𝝻͜͡𝐫 𝐋𝝾̚𝝼͜͡𝗲 :🦚🍬⛱️🎗️💖",
         mediaType: 4,
         thumbnailUrl: "https://files.catbox.moe/ord5nm.jpg",
-        sourceUrl: "https://Wa.me/+254781496274",
+        sourceUrl: "https://Wa.me/+94761332610",
         showAdAttribution: true
       }
     },
