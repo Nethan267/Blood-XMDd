@@ -47,8 +47,8 @@ _Reply to this message with 1 or 2 to download._`;
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363302677217436@newsletter',
-                newsletterName: 'CASEYRHODES-XMD',
+                newsletterJid: '120363419102725912@newsletter',
+                newsletterName: 'BLOOD-XMD',
                 serverMessageId: 143
             }
         };
@@ -148,8 +148,8 @@ _Reply with 1, 2 or 3 to this message to download the format you prefer._`;
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363302677217436@newsletter',
-                newsletterName: 'CASEYRHODES-TECH',
+                newsletterJid: '120363419102725912@newsletter',
+                newsletterName: 'BLOOD-TECH',
                 serverMessageId: 143
             }
         };
