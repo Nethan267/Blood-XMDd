@@ -14,7 +14,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const start = new Date().getTime();
 
         const reactionEmojis = ['🔥', '⚡', '🚀', '💨', '🎯', '🎉', '🌟', '💥', '🕐', '🔹'];
-        const textEmojis = ['💎', '🏆', '⚡️', '🚀', '🎶', '🌠', '🌀', '🔱', '🛡️', '✨'];
+        const textEmojis = ['🚀'];
 
         const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
         let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
@@ -32,7 +32,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
-        const text = `> *🩸𝐁𝐋𝐎𝐎𝐃 - 𝐗𝐌𝐃 : ${responseTime.toFixed(2)}ms ${reactionEmoji}*`;
+        const text = `> *𝐁𝐋𝐎𝐎𝐃 - 𝐗𝐌𝐃 : ${responseTime.toFixed(2)}ms ${reactionEmoji}*`;
 
         await conn.sendMessage(from, {
             text,
@@ -42,7 +42,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: "BLOOD XMD",
+                    newsletterName: "BLOOD XMD PONG",
                     serverMessageId: 143
                 }
             }
