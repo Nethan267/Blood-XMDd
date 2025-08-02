@@ -28,7 +28,7 @@ let dec = `
 
 ⟣──────────────────⟢
 
-> 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃 
+> 𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃 
 
 ⟣──────────────────⟢
 ${readMore}
@@ -39,9 +39,9 @@ https://tinyurl.com/26kh6jss
 
 https://tinyurl.com/26kh6jss
 
-\`𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐗𝐌𝐃\` *Dev🧑‍💻*
+\`𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃\` *Dev🧑‍💻*
 
-wa.me/+254112192119?text=Support!
+wa.me/+94761332610?text=Support!
 
 ⟣──────────────────⟢
 
@@ -57,8 +57,8 @@ await conn.sendMessage(
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363302677217436@newsletter',
-                        newsletterName: '『 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃 』',
+                        newsletterJid: '120363419102725912@newsletter',
+                        newsletterName: '『 𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃 』',
                         serverMessageId: 143
                     }
                 }
