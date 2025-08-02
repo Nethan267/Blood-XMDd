@@ -1,8 +1,8 @@
 {
-  "name": "CASEYRHODES-XMD",
+  "name": "BLOOD-XMD",
   "description": "An Advanced Whatsapp bot 🚀 built for fast automation, media tool, and smooth group management developed by Caseyrhodes tech",
   "logo": "https://files.catbox.moe/vcdwmp.jpg",
-  "keywords": ["CASEYRHODES-XMD"],
+  "keywords": ["BLOOD-XMD"],
   "success_url": "/",
 
     "stack": "container",
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "CASEYRHODES-XMD"
+      "value": "BLOOD-XMD"
     }, 
       
     "PREFIX": {
@@ -91,14 +91,14 @@
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "254112192119"
+      "value": "94761332610"
 
     }, 
 
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "CASEYRHODES-XMD"
+      "value": "BLOOD-XMD"
 
       }, 
 
