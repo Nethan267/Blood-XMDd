@@ -50,8 +50,8 @@ pσwєrєd вч *cαѕєчrhσdєѕ хtєch* 💜`;
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '12036330267721743@newsletter',
-                    newsletterName: 'cαѕєчrhσdєѕ хtєch',
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: 'BLOOD XMD',
                     serverMessageId: 143
                 }
             }
