@@ -33,7 +33,7 @@ cmd({
 ╭━━❐━⪼
 ┇๏ *Owner* - ${response.data.owner}
 ╰━━❑━⪼
-> *© Pᴏᴡᴇʀᴇᴅ Bʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs xᴍᴅ ♡*`;
+> *© Pᴏᴡᴇʀᴇᴅ Bʏ ʙʟᴏᴏᴅ xᴍᴅ ♡*`;
 
         // Check if there are any media items
         if (media.length > 0) {
