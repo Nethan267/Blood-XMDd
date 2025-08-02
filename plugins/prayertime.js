@@ -60,8 +60,8 @@ async(conn, mek, m, {from, l, quoted, body, isCmd, command, args, q, isGroup, se
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363302677217436@newsletter',
-                        newsletterName: '𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐏𝐑𝐀𝐘𝐄𝐑𝐓𝐈𝐌𝐄',
+                        newsletterJid: '120363419102725912@newsletter',
+                        newsletterName: '𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃 𝐏𝐑𝐀𝐘𝐄𝐑𝐓𝐈𝐌𝐄',
                         serverMessageId: 143
                     }
                 }
