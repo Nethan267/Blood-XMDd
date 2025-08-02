@@ -58,6 +58,6 @@ cmd({
     });
   } catch (_0x1ad7bb) {
     console.log(_0x1ad7bb);
-    _0x1bb557("❌𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐗мᎠ Error generating password🤕: " + _0x1ad7bb.message);
+    _0x1bb557("❌𝐁𝐋𝐎𝐎𝐃 𝐗мᎠ Error generating password🤕: " + _0x1ad7bb.message);
   }
 });
