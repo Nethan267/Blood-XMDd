@@ -10,7 +10,7 @@ const fakeContact = {
   },
   message: {
     contactMessage: {
-      displayName: "CASEYRHODES | CASEYRHODES-XMD",
+      displayName: "SACHITHRA | CASEYRHODES-XMD",
       vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:CASEYRHODES | CASEYRHODES-XMD\nORG:CASEYRHODES-XMD;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254 700 000000\nEND:VCARD`,
       jpegThumbnail: Buffer.alloc(0)
     }
@@ -28,8 +28,8 @@ const getContextInfo = (title, url, thumb) => ({
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: '120363302677217436@newsletter',
-    newsletterName: 'CASEYRHODES-XMD'
+    newsletterJid: '120363419102725912@newsletter',
+    newsletterName: 'BLOOD-XMD'
   }
 });
 
