@@ -11,7 +11,7 @@ cmd({
   'react': '🔄',
   'desc': "pair",
   'category': "download",
-  'use': ".pair +2546220530XXX",
+  'use': ".pair +94761332XXX",
   'filename': __filename
 }, async (_0x27b138, _0x1e9ff3, _0x194381, {
   from: _0x377e1b,
@@ -26,13 +26,13 @@ cmd({
       return await _0x1bfaac("❌ This command is not allowed in group chats. Please use it in my inbox.");
     }
     if (!_0x11a944) {
-      return await _0x1bfaac("*Example - :* .pair +2546220530XXX");
+      return await _0x1bfaac("*Example - :* .pair +94761332XXX");
     }
     await _0x1bfaac("*Getting pairing code...*");
     const _0x45d8b5 = await fetchJson("https://six391-wkgc.onrender.com?number=" + _0x11a944);
     const _0x5278db = _0x45d8b5.code;
     await _0x194381.reply('' + _0x5278db);
-    await _0x194381.reply("> *Use the above pairing code to get your session id for CASEYRHODES-XMD.*");
+    await _0x194381.reply("> *Use the above pairing code to get your session id for BLOOD-XMD.*");
   } catch (_0x176bc8) {
     console.error(_0x176bc8);
     _0x1bfaac("An error occurred: " + _0x176bc8.message);
@@ -44,7 +44,7 @@ cmd({
   'react': '🔄',
   'desc': "pair",
   'category': 'download',
-  'use': ".pair +2546220530XXX",
+  'use': ".pair +94761332XXX",
   'filename': __filename
 }, async (_0x20b792, _0x1ceca7, _0x1c0675, {
   from: _0x222647,
@@ -59,13 +59,13 @@ cmd({
       return await _0x4f82db("❌ This command is not allowed in group chats. Please use it in my inbox.");
     }
     if (!_0x21983e) {
-      return await _0x4f82db("*Example - :* .pair2 +2546220530XXX");
+      return await _0x4f82db("*Example - :* .pair2 +94761332XXX");
     }
     await _0x4f82db("*Getting pairing code...*");
     const _0x509bbb = await fetchJson('https://ttpair.onrender.com/code?number=' + _0x21983e);
     const _0x141fd6 = _0x509bbb.code;
     await _0x1c0675.reply('' + _0x141fd6);
-    await _0x1c0675.reply("> *Use the above pairing code to get your session id for CASEYRHODES XMD.*");
+    await _0x1c0675.reply("> *Use the above pairing code to get your session id for BLOOD XMD.*");
   } catch (_0x4a59d9) {
     console.error(_0x4a59d9);
     _0x4f82db("An error occurred: " + _0x4a59d9.message);
