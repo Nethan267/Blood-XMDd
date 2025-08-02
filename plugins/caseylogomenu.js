@@ -12,7 +12,7 @@ cmd({
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        let dec = `*╭───❍「 LOGO 𝖫𝖨𝖲𝖳 」❍*
+        let dec = `*╭───❍「 BLOOD XMD LOGO 𝖫𝖨𝖲𝖳 」❍*
 ‎*├⬡ .ɴᴇᴏɴʟɪɢʜᴛ*
 ‎*├⬡ .ʙʟᴀᴄᴋᴘɪɴᴋ*
 ‎*├⬡ .ᴅʀᴀɢᴏɴʙᴀʟʟ*
@@ -56,8 +56,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363302677217436@newsletter',
-                        newsletterName: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃  𝐋𝐎𝐆𝐎 𝐌𝐄𝐍𝐔🧸₊",
+                        newsletterJid: '120363419102725912@newsletter',
+                        newsletterName: "𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃  𝐋𝐎𝐆𝐎 𝐌𝐄𝐍𝐔🧸₊",
                         serverMessageId: 143
                     }
                 }
