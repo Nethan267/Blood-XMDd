@@ -34,7 +34,7 @@ await conn.sendMessage(from, { text: repo ,
     forwardingScore: 999,
     isForwarded: false,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363318387454868@newsletter',
+      newsletterJid: '120363419102725912@newsletter',
       newsletterName: "𝐀ɭι̇ι̇ 𝐌Ɗ 🍁",
       serverMessageId: 999
     },
@@ -123,7 +123,7 @@ ${readMore}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363302677217436@newsletter',
+                    newsletterJid: '120363419102725912@newsletter',
                     newsletterName: '☇ cαsєчrhσdєs suppσrt  ⃪🤖͎᪳᪳𝆺𝅥',
                     serverMessageId: 143
                 }
@@ -140,7 +140,7 @@ ${readMore}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363302677217436@newsletter',
+                    newsletterJid: '120363419102725912@newsletter',
                     newsletterName: '☇ cαsєчrhσdєs suppσrt⃪🤖͎᪳᪳𝆺𝅥',
                     serverMessageId: 143
                 }
