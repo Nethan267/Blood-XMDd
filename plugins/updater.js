@@ -59,7 +59,7 @@ cmd({
         process.exit(0);
     } catch (error) {
         console.error("Update error:", error);
-        return reply("❌ Update failed. Please try manually.");
+        return reply("❌ Update කිරිම අසාර්ථකයි.කරුනාකර Manual Update කරන්න");
     }
 });
 
