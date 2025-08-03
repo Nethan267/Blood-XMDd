@@ -24,14 +24,14 @@ cmd({
     },
     message: {
       contactMessage: {
-        displayName: "CASEYRHODES | CASEYRHODES",
-        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:CASEYRHODES | CASEYRHODES-XMD\nORG:CASEYRHODES;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254 700 000000\nEND:VCARD`,
+        displayName: "SACHITHRA MADUSANKA",
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:BLOOD TEAM | BLOOD-XMD\nORG:CASEYRHODES;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254 700 000000\nEND:VCARD`,
         jpegThumbnail: Buffer.alloc(0)
       }
     }
   };
 
-  const uptimeText = `*🤖 CASEYRHODES-XMD Bot Uptime:*\n🕒 ${runtime()}\n\n💡 The bot has been running without interruption.`;
+  const uptimeText = `*🤖 BLOOD-XMD Bot Uptime:*\n🕒 ${runtime()}\n\n💡 The bot has been running without interruption.`;
 
   await Void.sendMessage(m.chat, {
     text: uptimeText,
@@ -43,7 +43,7 @@ cmd({
         newsletterName: "CASEYRHODES-XMD Official"
       },
       externalAdReply: {
-        title: "CASEYRHODES-XMD",
+        title: "BLOOD-XMD",
         body: "Uptime Monitor by CASEYRHODES-XMD",
         thumbnailUrl: "https://files.catbox.moe/51dcx2.jpg",
         mediaType: 1,
