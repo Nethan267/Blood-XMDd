@@ -45,7 +45,7 @@ cmd({
       externalAdReply: {
         title: "BLOOD-XMD",
         body: "Uptime Monitor by BLOOD-XMD",
-        thumbnailUrl: "https://files.catbox.moe/51dcx2.jpg",
+        thumbnailUrl: "https://files.catbox.moe/51dcx2.",
         mediaType: 1,
         renderLargerThumbnail: true,
         showAdAttribution: true,
