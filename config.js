@@ -1,4 +1,4 @@
-const fs = require('fs');
+--const fs = require('fs');
 if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
 
 function convertToBool(text, fault = 'true') {
@@ -33,7 +33,7 @@ MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/52dotx.j
 // add custom menu and mention reply image url
 PREFIX: process.env.PREFIX || ".",
 // add your prifix for bot   
-BOT_NAME: process.env.BOT_NAME || "CASEYRHODES-MD",
+BOT_NAME: process.env.BOT_NAME || "BLOOD-MD",
 // add bot namw here for menu
 STICKER_NAME: process.env.STICKER_NAME || "CASEYRHODES",
 // type sticker pack name 
@@ -47,11 +47,11 @@ OWNER_NUMBER: process.env.OWNER_NUMBER || "94761332610",
 // add your bot owner number
 OWNER_NAME: process.env.OWNER_NAME || "CASEYRHODES-TECH",
 // add bot owner name
-DESCRIPTION: process.env.DESCRIPTION || "*© POWERED CASEYRHODES TECH*",
+DESCRIPTION: process.env.DESCRIPTION || "*© POWERED BLOOD XMD*",
 // add bot owner name    
 ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/52dotx.jpg",
 // add img for alive msg
-LIVE_MSG: process.env.LIVE_MSG || "> Powered by *CASEYRHODES TECH*⚡",
+LIVE_MSG: process.env.LIVE_MSG || "> Powered by *BLOOD XMD*⚡",
 // add alive msg here 
 READ_MESSAGE: process.env.READ_MESSAGE || "false",
 // Turn true or false for automatic read msgs
