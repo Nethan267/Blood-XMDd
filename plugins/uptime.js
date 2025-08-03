@@ -39,12 +39,12 @@ cmd({
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363302677217436@newsletter",
-        newsletterName: "CASEYRHODES-XMD Official"
+        newsletterJid: "120363419102725912@newsletter",
+        newsletterName: "BLOOD-XMD Official"
       },
       externalAdReply: {
         title: "BLOOD-XMD",
-        body: "Uptime Monitor by CASEYRHODES-XMD",
+        body: "Uptime Monitor by BLOOD-XMD",
         thumbnailUrl: "https://files.catbox.moe/51dcx2.jpg",
         mediaType: 1,
         renderLargerThumbnail: true,
