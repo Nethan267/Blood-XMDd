@@ -19,7 +19,7 @@ cmd({
         await reply("🔍 Checking for CASEYRHODES-XMD updates...");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/BLOOD-MAIN/Blood-XMD/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
