@@ -19,7 +19,7 @@ cmd({
         await reply("🔍 Checking for BLOOD XMD updates...");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://api.github.com");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/BLOOD-MAIN/Blood-XMD/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
@@ -44,7 +44,7 @@ cmd({
 
         // Copy updated files, preserving config.js and app.json
         await reply("🔄 Replacing files...");
-        const sourcePath = path.join(extractPath, "CASEYRHODES-XMD-main");
+        const sourcePath = path.join(extractPath, "BLOOD-XMD-main");
         const destinationPath = path.join(__dirname, '..');
         copyFolderSync(sourcePath, destinationPath);
 
