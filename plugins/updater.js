@@ -16,10 +16,10 @@ cmd({
     if (!isOwner) return reply("This command is only for the bot owner.");
 
     try {
-        await reply("🔍 Checking for CASEYRHODES-XMD updates...");
+        await reply("🔍 Checking for BLOOD XMD updates...");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://api.github.com/repos/BLOOD-MAIN/Blood-XMD/commits/main");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/caseyweb/CASEYRHODES-XMD/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
