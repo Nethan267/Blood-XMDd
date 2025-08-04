@@ -5,7 +5,7 @@ cmd({
   pattern: "tiktok",
   alias: ["tiktoks", "tiks"],
   desc: "Search for TikTok videos using a query.",
-  react: '✅',
+  react: '👁️‍🗨️',
   category: 'tools',
   filename: __filename
 }, async (conn, m, store, {
