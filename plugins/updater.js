@@ -29,7 +29,7 @@ cmd({
             return reply("✅ Your CASEYRHODES-XMD bot is already up-to-date!");
         }
 
-        await reply("🚀 Updating CASEYRHODES-XMD Bot...");
+        await reply("🚀 Updating BLOOD-XMD Bot...");
 
         // Download the latest code
         const zipPath = path.join(__dirname, "latest.zip");
