@@ -28,6 +28,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 𝖡𝖤𝖳𝖠*
 ╰────────────────────────┈⊷
 
+*Free Deploy කරගන්න ඔනි අය Owner හරහා Deploy කර ගන්න 👁️‍🗨️*
+
 *╭──────────●●►*
 *│Owner = 94761332610*
 *╰──────────●●►* 
@@ -37,8 +39,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 *1 │❯❯◦ COMMANDS MENU ( Comming soon )*
 *2 │❯❯◦ BLOOD-XMD SPEED ( .ping )*
 
-𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= _https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
-𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= _https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
+
+_𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
+_𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
 
 
 > 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝚃𝙴𝙰𝙼`;
