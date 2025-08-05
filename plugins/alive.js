@@ -52,7 +52,7 @@ _𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 
 
         // Send image + caption + audio combined
         await conn.sendMessage(from, { 
-            image: { url: `https://files.catbox.moe/njl5qf.jpg` },  
+            image: { url: `https://files.catbox.moe/xbpir9.jpg` },  
             caption: status,
             contextInfo: {
                 mentionedJid: [m.sender],
