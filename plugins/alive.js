@@ -26,16 +26,16 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃ *🧑‍💻𝖣ᴇᴘʟᴏʏᴇᴅ ᴏɴ* : *${platform}*
 ┃ *🧠𝖮ᴡɴᴇʀ* : *sachithra madusanka*
 ┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 𝖡𝖤𝖳𝖠*
-╰──────────────────────────┈⊷
+╰────────────────────────┈⊷
 
 
 *╭────────⎝ .....𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐇𝐄𝐋𝐏 🗣️..... ⎠*
-*▎
+*▎*
 *▎*𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= _https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
-*▎
+*▎*
 *▎*𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= _https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
-*▎
-*╰─────────────────●●►*
+*▎*
+*╰───────────────────────●●►*
 
 *╭──────────●●►*
 *│*𝐎𝐰𝐧𝐞𝐫 = 𝐒𝐚𝐜𝐡𝐢𝐭𝐡𝐫𝐚 𝐦𝐚𝐝𝐮𝐬𝐚𝐧𝐤𝐚*
@@ -68,7 +68,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Attach audio within the same "quoted" message for grouping
         await conn.sendMessage(from, { 
-            audio: { url: 'https://files.catbox.moe/dcxfi1.mp3' },
+            audio: { url: 'https://files.catbox.moe/8fiark.mp3' },
             mimetype: 'audio/mp4',
             ptt: true 
         }, { quoted: mek });
