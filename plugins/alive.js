@@ -28,17 +28,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 𝖡𝖤𝖳𝖠*
 ╰────────────────────────┈⊷
 
-
-*╭────────⎝  .....𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐇𝐄𝐋𝐏 🗣️.....  ⎠*
-*▎*
-*▎𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= _https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
-*▎*
-*▎𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= _https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
-*▎*
-*╰───────────────────────●●►*
-
 *╭──────────●●►*
-*│*𝐎𝐰𝐧𝐞𝐫 = 𝐒𝐚𝐜𝐡𝐢𝐭𝐡𝐫𝐚 𝐦𝐚𝐝𝐮𝐬𝐚𝐧𝐤𝐚*
+*│Owner = 94761332610*
 *╰──────────●●►* 
 
 *Reply Text Massage*
@@ -46,6 +37,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 *1 │❯❯◦ COMMANDS MENU ( Comming soon )*
 *2 │❯❯◦ BLOOD-XMD SPEED ( .ping )*
 
+𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= _https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
+𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= _https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
 
 
 > 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝚃𝙴𝙰𝙼`;
