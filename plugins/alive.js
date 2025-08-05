@@ -28,8 +28,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 𝖡𝖤𝖳𝖠*
 ╰────────────────────────┈⊷
 
-*Free Deploy කරගන්න ඔනි අය Owner හරහා Deploy කර ගන්න 👁️‍🗨️*
-
+╔════════════║ 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 ║══════════════◆►
+║*Free Deploy කරගන්න ඔනි අය Owner හරහා Deploy කර ගන්න 👁️‍🗨️*
+║*Next Update එකට ගන්නත් පුලුවන් ඔයාලට 😚*
+║*Adult Menu Not Available 🔞*
+╚══════════════════════════════◆►
 *╭──────────●●►*
 *│Owner = 94761332610*
 *╰──────────●●►* 
