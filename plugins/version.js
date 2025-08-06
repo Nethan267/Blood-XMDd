@@ -27,7 +27,7 @@ cmd({
     }
 
     // Fetch latest version data from GitHub
-    const rawVersionUrl = 'https://raw.githubusercontent.com/caseyweb/CASEYRHODES-XMD/main/data/version.json';
+    const rawVersionUrl = 'https://raw.githubusercontent.com/BLOOD-MAIN/Blood-XMD/main/data/version.json';
     let latestVersion = 'Unknown';
     let latestChangelog = 'No changelog available.';
     try {
@@ -53,7 +53,7 @@ cmd({
     const lastUpdate = fs.statSync(localVersionPath).mtime.toLocaleString();
 
     // GitHub stats
-    const githubRepo = 'https://github.com/caseyweb/CASEYRHODES-XMD';
+    const githubRepo = 'https://github.com/BLOOD-MAIN/Blood-XMD';
 
     // Check update status
     let updateMessage = `*✅ ʏᴏᴜʀ ᴄᴀsᴇʏʀʜᴏᴅᴇs-xᴍᴅ ʙᴏᴛ ɪs ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ!*`;
@@ -80,8 +80,8 @@ cmd({
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '+120363302677217436@newsletter',
-          newsletterName: '☇ ᴄᴀsᴇʏʀʜᴏᴅᴇs-xᴍᴅ ⃪🤖͎᪳᪳𝆺𝅥',
+          newsletterJid: '120363419102725912@newsletter',
+          newsletterName: 'BLOOD XMD VERSION',
           serverMessageId: 143
         }
       }
