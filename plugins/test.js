@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
             },
             message: {
                 contactMessage: {
-                    displayName: "BLOOD-XMD VERIFIED ✅",
+                    displayName: "SACHITHRA MADUSANKA VERIFIED ✅",
                     vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:CASEYRHODES-XMD\nORG:CASEYRHODES;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254700000000\nEND:VCARD"
                 }
             }
@@ -57,7 +57,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                     mediaType: 1,
                     renderLargerThumbnail: true,
                     showAdAttribution: true,
-                    sourceUrl: "https://github.com/BLOOD-MAIN/Blood-XMD"
+                    sourceUrl: "https://files.catbox.moe/rs1zep.jpg"
                 }
             }
         }, { quoted: fakeContact });
