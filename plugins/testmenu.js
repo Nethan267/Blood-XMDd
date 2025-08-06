@@ -4,14 +4,14 @@ const { runtime } = require('../lib/functions');
 const axios = require('axios');
 
 cmd({
-    pattern: "menu",
+    pattern: "allmenu",
     desc: "Show interactive menu system",
     category: "menu",
     react: "🧾",
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
-        const menuCaption = `╭━━━《*𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃*》 ━━━┈⊷
+        const menuCaption = `╭━━━《*🩸 𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃 🩸*》 ━━━┈⊷
 ┃❍╭──────────────
 ┃❍│ *Usᴇʀ* : ${config.OWNER_NAME}
 ┃❍⁠│ *ʙᴀɪʟᴇʏs* : 𝐌𝐮𝐥𝐭𝐢 𝐝𝐞𝐯𝐢𝐜𝐞
@@ -44,8 +44,8 @@ cmd({
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363302677217436@newsletter',
-                newsletterName:'CASEYRHODES-XMD 👻' ,
+                newsletterJid: '120363419102725912@newsletter',
+                newsletterName:'BLOOD-XMD 👻' ,
                 serverMessageId: 143
             }
         };
@@ -56,7 +56,7 @@ cmd({
                 return await conn.sendMessage(
                     from,
                     {
-                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/52dotx.jpg' },
+                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/1nr6yp.jpg' },
                         caption: menuCaption,
                         contextInfo: contextInfo
                     },
@@ -424,7 +424,7 @@ cmd({
                                 await conn.sendMessage(
                                     senderID,
                                     {
-                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/52dotx.jpg' },
+                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/52dotx.jg' },
                                         caption: selectedMenu.content,
                                         contextInfo: contextInfo
                                     },
