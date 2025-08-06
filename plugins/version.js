@@ -53,7 +53,7 @@ cmd({
     const lastUpdate = fs.statSync(localVersionPath).mtime.toLocaleString();
 
     // GitHub stats
-    const githubRepo = 'https://github.com/Repo එක ඔනිමද අනෙ 😘💗-XMD';
+    const githubRepo = 'https://github.com/Repo.එක.ඔනිමද.අනෙ.😘💗-XMD';
 
     // Check update status
     let updateMessage = `*✅ ʏᴏᴜʀ ᴄᴀsᴇʏʀʜᴏᴅᴇs-xᴍᴅ ʙᴏᴛ ɪs ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ!*`;
