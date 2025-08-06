@@ -140,7 +140,7 @@ ${readMore}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: 'BLOOD XMD',
+                    newsletterJid: '120363419102725912@newsletter',
                     newsletterName: 'BLOOD XMD',
                     serverMessageId: 143
                 }
