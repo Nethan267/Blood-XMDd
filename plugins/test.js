@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
             },
             message: {
                 contactMessage: {
-                    displayName: "CASEYRHODES-XMD VERIFIED ✅",
+                    displayName: "BLOOD-XMD VERIFIED ✅",
                     vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:CASEYRHODES-XMD\nORG:CASEYRHODES;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254700000000\nEND:VCARD"
                 }
             }
@@ -46,18 +46,18 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363302677217436@newsletter',
-                    newsletterName: "CASEYRHODES TECH 👻",
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: "BLOOD XMD👻",
                     serverMessageId: 143
                 },
                 externalAdReply: {
-                    title: "CASEYRHODES-XMD",
+                    title: "BLOOD XMD",
                     body: "Multi-Device WhatsApp Bot",
-                    thumbnailUrl: "https://files.catbox.moe/y3j3kl.jpg",
+                    thumbnailUrl: "",
                     mediaType: 1,
                     renderLargerThumbnail: true,
                     showAdAttribution: true,
-                    sourceUrl: "https://github.com/caseyweb/CASEYRHODES-XMD"
+                    sourceUrl: "https://github.com/BLOOD-MAIN/Blood-XMD"
                 }
             }
         }, { quoted: fakeContact });
