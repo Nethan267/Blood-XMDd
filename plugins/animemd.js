@@ -21,9 +21,9 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 try{
 
 let res = await axios.get('https://api.lolicon.app/setu/v2?num=1&r18=0&tag=lolicon')
-let wm = `😎 Random Garl image
+let wm = `*😎 Random Garl image*
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.data[0].urls.original }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
@@ -46,7 +46,7 @@ try{
 let res = await axios.get('https://api.waifu.pics/sfw/waifu')
 let wm = `🩵 Random Waifu image
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
@@ -69,7 +69,7 @@ try{
 let res = await axios.get('https://api.waifu.pics/sfw/neko')
 let wm = `🩷 Random neko image
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url  }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
@@ -90,9 +90,9 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let res = await axios.get('https://api.waifu.pics/sfw/megumin')
-let wm = `❤️‍🔥Random megumin image
+let wm = `*❤️‍🔥Random megumin image*
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
@@ -113,9 +113,9 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let res = await axios.get('https://api.waifu.im/search/?included_tags=maid')
-let wm = `😎 Random maid image
+let wm = `*😎 Random maid image*
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.images[0].url  }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
@@ -136,9 +136,9 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let res = await axios.get('https://api.waifu.pics/sfw/awoo')
-let wm = `😎 Random awoo image
+let wm = `*😎 Random awoo image*
 
-> © 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
+> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: mek })
 } catch (e) {
 reply(cants)
