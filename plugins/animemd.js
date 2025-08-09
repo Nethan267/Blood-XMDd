@@ -44,7 +44,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let res = await axios.get('https://api.waifu.pics/sfw/waifu')
-let wm = `🩵 Random Waifu image
+let wm = `*🩵 Random Waifu image*
 
 > © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url }, caption: wm}, { quoted: mek })
@@ -67,7 +67,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let res = await axios.get('https://api.waifu.pics/sfw/neko')
-let wm = `🩷 Random neko image
+let wm = `*🩷 Random neko image*
 
 > © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`
 await conn.sendMessage(from, { image: { url: res.data.url  }, caption: wm}, { quoted: mek })
@@ -159,7 +159,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const response = await axios.get(apiUrl);
         const data = response.data;
 
-        await conn.sendMessage(from, { image: { url: data.url }, caption: '*ANIME GIRL IMAGE* 🥳\n\n\n *> ©💎 ℂ𝔸𝕊𝔼𝕐ℝℍ𝕆𝔻𝔼𝕊-𝕏𝕄𝔻 💎`*' }, { quoted: mek });
+        await conn.sendMessage(from, { image: { url: data.url }, caption: '*ANIME GIRL IMAGE* 🥳\n\n\n *> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸`*' }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`*Error Fetching Anime Girl image*: ${e.message}`);
@@ -179,7 +179,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const response = await axios.get(apiUrl);
         const data = response.data;
 
-        await conn.sendMessage(from, { image: { url: data.url }, caption: 'ANIME GIRL IMAGE 👾\n\n\n > ©💎 ℂ𝔸𝕊𝔼𝕐ℝℍ𝕆𝔻𝔼𝕊-𝕏𝕄𝔻 💎' }, { quoted: mek });
+        await conn.sendMessage(from, { image: { url: data.url }, caption: 'ANIME GIRL IMAGE 👾\n\n\n > © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🩸' }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`*Error Fetching Anime Girl image*: ${e.message}`);
