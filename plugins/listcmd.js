@@ -52,8 +52,8 @@ cmd({
           serverMessageId: 2
         },
         externalAdReply: {
-          title: "CASEYRHODES TECH",
-          body: `ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ`,
+          title: "BLOOD XMD MAIN TEAM",
+          body: `𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝚃𝙴𝙰𝙼`,
           mediaType: 1,
           sourceUrl: "https://github.com/BLOOD-MAIN/Blood-XMD",
           renderLargerThumbnail: false,
