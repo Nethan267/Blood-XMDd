@@ -13,7 +13,7 @@ cmd({
     alias: ["settings","setting", "allvar"],
     desc: "Settings of bot",
     category: "menu",
-    react: "⤵️",
+    react: "⚙️",
     filename: __filename
 }, 
 async (conn, mek, m, { from, quoted, reply }) => {
@@ -48,7 +48,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
         await conn.sendMessage(
             from,
             {
-                image: { url: 'https://i.ibb.co/DDjPWXGT/lordcasey.jpg' }, // Image URL
+                image: { url: 'https://files.catbox.moe/a6wgig.jpg' }, // Image URL
                 caption: envSettings,
                 contextInfo: {
                     mentionedJid: [m.sender],
