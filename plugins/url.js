@@ -65,7 +65,7 @@ cmd({
       `*${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ ✅*\n\n` +
       `*Size:* ${formatBytes(mediaBuffer.length)}\n` +
       `*URL:* ${mediaUrl}\n\n` +
-      `> ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ 🌟`
+      `> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🌟`
     );
 
   } catch (error) {
