@@ -32,7 +32,7 @@ cmd({
     const time = moment().tz('Africa/Nairobi').format('HH:mm:ss');
     const date = moment().tz('Africa/Nairobi').format('dddd, MMMM Do YYYY');
 
-    const caption = `╭━━〔 *CASEYRHODES-XMD* 〕━━⬣
+    const caption = `╭━━〔 *BLOOD-XMD* 〕━━⬣
 ┃ 👑 *Total Commands:* ${totalCommands}
 ┃ 📅 *Date:* ${date}
 ┃ ⏰ *Time:* ${time}
@@ -47,15 +47,15 @@ cmd({
         isForwarded: true,
         mentionedJid: [m.sender],
         forwardedNewsletterMessageInfo: {
-          newsletterJid:"120363302677217436@newsletter",
-          newsletterName: "CASEYRHODES TECH",
+          newsletterJid:"120363419102725912@newsletter",
+          newsletterName: "BLOOD XMD 🩸",
           serverMessageId: 2
         },
         externalAdReply: {
           title: "CASEYRHODES TECH",
           body: `ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ`,
           mediaType: 1,
-          sourceUrl: "https://github.com/caseyweb/CASEYRHODES-XMD",
+          sourceUrl: "https://github.com/BLOOD-MAIN/Blood-XMD",
           renderLargerThumbnail: false,
           showAdAttribution: true
         }
@@ -68,8 +68,8 @@ cmd({
       },
       message: {
         contactMessage: {
-          displayName: "CASEYRHODES-XMD | Powered by Caseyrhodes ✅",
-          vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:CASEYRHODES TECH | Pkdriller\nORG: Caseyrhodes ✅;\nTEL;type=CELL;type=VOICE;waid=254112192119:+254 112 192119\nEND:VCARD`,
+          displayName: "BLOOD-XMD | Powered by Sachithra Madusanka  ✅",
+          vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:BLOOD XMD | Pkdriller\nORG: BLOOD XMD TEAM ✅;\nTEL;type=CELL;type=VOICE;waid=254112192119:+254 112 192119\nEND:VCARD`,
           jpegThumbnail: Buffer.alloc(0)
         }
       }
