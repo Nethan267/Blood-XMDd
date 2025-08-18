@@ -40,7 +40,7 @@ let about = `
 *•────────────•⟢*
 `
 
-await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/y3j3kl.jpg`},caption:about,
+await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/rklpuz.jpg`},caption:about,
                              contextInfo: {
     mentionedJid: [m.sender],
     forwardingScore: 999,
