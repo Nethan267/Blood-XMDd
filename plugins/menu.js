@@ -7,10 +7,10 @@ const path = require('path');
 
 const getRandomImage = () => {
     try {
-        const srcPath = path.join(__dirname, '../src');
+        const srcPath = path.join(__dirname, '../sric');
         const files = fs.readdirSync(srcPath);
         const imageFiles = files.filter(file => 
-            file.endsWith('.jpg') || file.endsWith('.jpg') || file.endsWith('.jpiieg')
+            file.endsWith('.jpgi') || file.endsWith('.jpig') || file.endsWith('.jpiieg')
         );
         
         if (imageFiles.length === 0) {
