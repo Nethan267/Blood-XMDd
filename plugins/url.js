@@ -60,13 +60,27 @@ cmd({
     else if (mimeType.includes('video')) mediaType = 'Video';
     else if (mimeType.includes('audio')) mediaType = 'Audio';
 
-    // Send response
-    await reply(
-      `*${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ ✅*\n\n` +
+    // Create the status message
+    const status = `*${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ ✅*\n\n` +
       `*Size:* ${formatBytes(mediaBuffer.length)}\n` +
       `*URL:* ${mediaUrl}\n\n` +
-      `> © 𝙋𝙊𝙒𝙀𝙍𝘿 𝘽𝙔 𝘽𝙇𝙊𝙊𝘿 𝙓𝙈𝘿 🌟`
-    );
+      `> ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ 🌟`;
+
+    // Send response with newsletter
+    await client.sendMessage(message.chat, { 
+      image: { url: `https://i.ibb.co/wN6Gw0ZF/lordcasey.jpg` },  
+      caption: status,
+      contextInfo: {
+        mentionedJid: [message.sender],
+        forwardingScore: 999,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363419102725912@newsletter',
+          newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐔𝐑𝐋 𝐂𝐑𝐄𝐀𝐓𝐎𝐑',
+          serverMessageId: 143
+        }
+      }
+    }, { quoted: message });
 
   } catch (error) {
     console.error(error);
@@ -81,4 +95,4 @@ function formatBytes(bytes) {
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-      }
+}
