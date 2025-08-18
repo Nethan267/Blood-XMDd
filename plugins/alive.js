@@ -4,7 +4,7 @@ const { runtime } = require('../lib/functions');
 
 cmd({
     pattern: "alive",
-    alias: ["av", "a", "runtime"],
+    alias: ["av", "runtime", "uptime"],
     desc: "Check uptime and system status",
     category: "main",
     react: "📟",
@@ -20,36 +20,35 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const usedMem = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2); // Used RAM in MB
 
         // Stylish and detailed system status message
-        const status = `╭───❰ *🩸 𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🩸* ❱──┈⊷
+        const status = `🌟 *Good ${
+  new Date().getHours() < 12 ? 'Morning' : 
+  (new Date().getHours() < 18 ? 'Afternoon' : 'Evening')
+}, ${pushname}!* 💫
+
+╭───❰ *🩸 𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🩸* ❱──┈⊷
 ┃ *✨𝖴ᴘᴛɪᴍᴇ* : *${runtime(process.uptime())}*
 ┃ *💾 𝖱ᴀᴍ ᴜsᴀɢᴇ* : *${usedMem}MB / ${totalMem}MB*
 ┃ *🧑‍💻𝖣ᴇᴘʟᴏʏᴇᴅ ᴏɴ* : *${platform}*
-┃ *🧠𝖮ᴡɴᴇʀ* : *sachithra madusanka*
-┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 𝖡𝖤𝖳𝖠*
-╰────────────────────────┈⊷
-
-*╔═══════════║⚠ 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 ⚠║═════════════◆►*
-*║Free Deploy කරගන්න ඔනි අය Owner හරහා Deploy කර ගන්න 👁️‍🗨️*
-*║Next Update එකට Movie ගන්නත් පුලුවන් ඔයාලට 😚*
-*║Adult Menu Not Available 🔞*
-*╚══════════════════════════════◆►*
-
-*╭──────────●●►*
-*│Owner = 94761332610*
-*╰──────────●●►* 
-
-*Reply Text Massage*
-
-*1 │❯❯◦ COMMANDS MENU ( Comming soon )*
-*2 │❯❯◦ BLOOD-XMD SPEED ( .ping )*
-
-
-_𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 👉= https://chat.whatsapp.com/I3QPd8C6WeWJmVaShYIV3g?mode=ac_t_*
-_𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 👉= https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M_*
-
-
-> 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝚃𝙴𝙰𝙼`;
-
+┃ *🧠𝖮ᴡɴᴇʀ* : *Sachithra madusanka*
+┃ *🧬𝖵ᴇʀsɪᴏɴ* : *𝟣.𝟢.𝟢 �𝖡𝖤𝖳𝖠*
+╰──────────────────────┈⊷
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ`;
+          
+        // Contact message for verified context
+        const verifiedContact = {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "SACHITHRA MADUSANKA  ✅",
+                    vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD XMD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD"
+                }
+            }
+        };
+        
         // Send image + caption + audio combined
         await conn.sendMessage(from, { 
             image: { url: `https://files.catbox.moe/xbpir9.jpg` },  
@@ -62,16 +61,18 @@ _𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 
                     newsletterJid: '120363419102725912@newsletter',
                     newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐀𝐋𝐈𝐕𝐄 🥵',
                     serverMessageId: 143
+                   }
                 }
-            }
-        }, { quoted: mek });
+            },
+            { quoted: verifiedContact }
+        );
 
         // Attach audio within the same "quoted" message for grouping
         await conn.sendMessage(from, { 
-            audio: { url: 'https://files.catbox.moe/g9lckl.mp4' },
+            audio: { url: 'https://files.catbox.moe/dcxfi1.mp3' },
             mimetype: 'audio/mp4',
             ptt: true 
-        }, { quoted: mek });
+             }, { quoted: verifiedContact });
 
     } catch (e) {
         console.error("Error in alive command:", e);
