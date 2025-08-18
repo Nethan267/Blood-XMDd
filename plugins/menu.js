@@ -15,14 +15,14 @@ const getRandomImage = () => {
         
         if (imageFiles.length === 0) {
             console.log('No image files found in src folder');
-            return 'https://files.catbox.moe/y3j3kl.jpg'; 
+            return 'https://files.catbox.moe/1nr6yp.jpg'; 
         }
         
         const randomImage = imageFiles[Math.floor(Math.random() * imageFiles.length)];
         return path.join(srcPath, randomImage);
     } catch (e) {
         console.log('Error getting random image:', e);
-        return 'https://files.catbox.moe/wklbg4.jpg'; 
+        return 'https://files.catbox.moe/1nr6yp.jpg'; 
     }
 };
 
@@ -39,6 +39,7 @@ cmd({
   new Date().getHours() < 12 ? 'Morning' : 
   (new Date().getHours() < 18 ? 'Afternoon' : 'Evening')
 }, ${pushname}!* 🌟
+
 ╭━━━《 *𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐗𝐌𝐃* 》 ━━━┈⊷
 ┃❍⁠⁠⁠⁠╭──────────────
 ┃❍⁠⁠⁠⁠│▸  Usᴇʀ : ${config.OWNER_NAME}
