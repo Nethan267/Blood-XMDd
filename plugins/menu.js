@@ -10,7 +10,7 @@ const getRandomImage = () => {
         const srcPath = path.join(__dirname, '../src');
         const files = fs.readdirSync(srcPath);
         const imageFiles = files.filter(file => 
-            file.endsWith('.jpg') || file.endsWith('.png') || file.endsWith('.jpeg')
+            file.endsWith('.jpg') || file.endsWith('.jpg') || file.endsWith('.jpeg')
         );
         
         if (imageFiles.length === 0) {
