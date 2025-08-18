@@ -68,7 +68,7 @@ _𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐋𝐈𝐍𝐊 
 
         // Attach audio within the same "quoted" message for grouping
         await conn.sendMessage(from, { 
-            audio: { url: 'https://files.catbox.moe/8fiark.mp3' },
+            audio: { url: 'https://files.catbox.moe/g9lckl.mp4' },
             mimetype: 'audio/mp4',
             ptt: true 
         }, { quoted: mek });
