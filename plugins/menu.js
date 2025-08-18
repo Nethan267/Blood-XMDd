@@ -58,21 +58,21 @@ cmd({
    \`\`\`ʀᴇᴘʟʏ ᴡɪᴛʜ ᴀɴʏ ɴᴜᴍʙᴇʀ\`\`\`
 
 *╭── [ MENU OPTION🌟] ‎─┈⊷*
-‎*├⬡ 1.ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
-‎*├⬡ 2.ɢʀᴏᴜᴘ ᴍᴇɴᴜ*
-‎*├⬡ 3.ғᴜɴ ᴍᴇɴᴜ*
-‎*├⬡ 4.ᴏᴡɴᴇʀ ᴍᴇɴᴜ*
-‎*├⬡ 5.ᴀɪ ᴍᴇɴᴜ*
-‎*├⬡ 6.ᴀɴɪᴍᴇ ᴍᴇɴᴜ*
-‎*├⬡ 7.ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ*
-‎*├⬡ 8.ᴏᴛʜᴇʀ ᴍᴇɴᴜ*
-‎*├⬡ 9.ʀᴇᴀᴄᴛɪᴏɴ ᴍᴇɴᴜ*
-‎*├⬡ 10.ᴍᴀɪɴ ᴍᴇɴᴜ*
-‎*├⬡ 11.sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ*
-‎*├⬡ 12.ᴍ-ᴘᴇsᴀ ᴍᴇɴᴜ*
-‎*├⬡ 13.ʟᴏɢᴏ ᴍᴇɴᴜ*
-‎*├⬡ 14.ʙɪʙʟᴇ ʟɪsᴛ*
-‎*├⬡ 15.ᴄᴏᴅᴇ ᴍᴇɴᴜ*
+‎*├⬡ 1️⃣.ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
+‎*├⬡ 2️⃣.ɢʀᴏᴜᴘ ᴍᴇɴᴜ*
+‎*├⬡ 3️⃣.ғᴜɴ ᴍᴇɴᴜ*
+‎*├⬡ 4️⃣.ᴏᴡɴᴇʀ ᴍᴇɴᴜ*
+‎*├⬡ 5️⃣.ᴀɪ ᴍᴇɴᴜ*
+‎*├⬡ 6️⃣.ᴀɴɪᴍᴇ ᴍᴇɴᴜ*
+‎*├⬡ 7️⃣.ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ*
+‎*├⬡ 8️⃣.ᴏᴛʜᴇʀ ᴍᴇɴᴜ*
+‎*├⬡ 9️⃣.ʀᴇᴀᴄᴛɪᴏɴ ᴍᴇɴᴜ*
+‎*├⬡ 🔟.ᴍᴀɪɴ ᴍᴇɴᴜ*
+‎*├⬡ 1️⃣1️⃣.sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ*
+‎*├⬡ 1️⃣2️⃣.ᴍ-ᴘᴇsᴀ ᴍᴇɴᴜ*
+‎*├⬡ 1️⃣3️⃣.ʟᴏɢᴏ ᴍᴇɴᴜ*
+‎*├⬡ 1️⃣4️⃣.ʙɪʙʟᴇ ʟɪsᴛ*
+‎*├⬡ 1️⃣5️⃣.ᴄᴏᴅᴇ ᴍᴇɴᴜ*
 ‎*╰────────────────┈⊷*
 _*ʀᴇᴘʟʏ ᴡɪᴛʜ ᴀɴʏ ɴᴜᴍʙᴇʀ ᴀʙᴏᴠᴇ ᴛᴏ ᴀᴄᴄᴇss ᴍᴇɴᴜ ᴏᴘᴛɪᴏɴ*_
 
@@ -90,8 +90,8 @@ fσr mσrє ínfσ tчpє *.ownєr*
             },
             message: {
                 contactMessage: {
-                    displayName: "CASEYRHODES VERIFIED ✅",
-                    vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: Caseyrhodes VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=254112192119:+254112192119\nEND:VCARD"
+                    displayName: "SACHITHRA MADUSANKA  ✅",
+                    vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD XMD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD"
                 }
             }
         };
@@ -101,8 +101,8 @@ fσr mσrє ínfσ tчpє *.ownєr*
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363302677217436@newsletter',
-                newsletterName:'CASEYRHODES-XMD 👻',
+                newsletterJid: '120363419102725912@newsletter',
+                newsletterName:'BLOOD-XMD 👻',
                 serverMessageId: 143
             }
         };
@@ -639,7 +639,7 @@ fσr mσrє ínfσ tчpє *.ownєr*
                                 await conn.sendMessage(
                                     senderID,
                                     {
-                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/52dotx.jpg' },
+                                        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/1nr6yp.jpg' },
                                         caption: selectedMenu.content,
                                         contextInfo: contextInfo
                                     },
