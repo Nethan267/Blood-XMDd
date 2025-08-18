@@ -1,61 +1,5 @@
-
-
-/*
-const config = require('../config')
-const {cmd , commands} = require('../command')
-cmd({
-    pattern: "script",
-    alias: ["sc","repo","info"],
-    desc: "bot repo",
-    react: "🤖",
-    category: "main",
-    filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-let repo =`
-*╭──────────────●●►*
-> *BOT OWNER:*
-*|* *SACHITHRA MADUSANKA*
-
-> *CASEYWEB REPO:*
-*|* https://github.com/
-
-> *SUPPORT GROUP:*
-*|* https://whatsapp.com/channel/0029VaoRxGmJpe8lgCqT1T2h
-*╰──────────────●●►*
-
-> *CREATED BY CASEYRHODES TECH*
-`
-await conn.sendMessage(from, { text: repo ,
-  contextInfo: {
-    mentionedJid: [ '' ],
-    groupMentions: [],
-    forwardingScore: 999,
-    isForwarded: false,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363419102725912@newsletter',
-      newsletterName: "𝐀ɭι̇ι̇ 𝐌Ɗ 🍁",
-      serverMessageId: 999
-    },
-externalAdReply: { 
-title: '𝐀ɭι̇ι̇ 𝐌Ɗ 🍁',
-body: `${pushname}`,
-mediaType: 1,
-sourceUrl: "https://github.com/itx-alii-raza/ALI-MD" ,
-thumbnailUrl: "https://i.ibb.co/8Dzbtwj2/mrfrankofc.jpg" ,
-renderLargerThumbnail: true,
-showAdAttribution: true
-}
-}}, { quoted: mek})}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-});
-*/
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
+const more = String.fromCharCode(8206);
+const readMore = more.repeat(4001);
 
 const fetch = require('node-fetch');
 const config = require('../config');    
@@ -74,7 +18,11 @@ async (conn, mek, m, { from, reply }) => {
 
     try {
         // Extract username and repo name from the URL
-        const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
+        const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/) || [];
+
+        if (!username || !repoName) {
+            throw new Error("Invalid GitHub URL format");
+        }
 
         // Fetch repository details using GitHub API
         const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
@@ -86,15 +34,15 @@ async (conn, mek, m, { from, reply }) => {
         const repoData = await response.json();
 
         // Format the repository information
-        const formattedInfo = `*𝐇𝐄𝐋𝐋𝐎 𝐓𝐇𝐄𝐑𝐄 𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃 𝐖.𝐀 𝐁𝐎𝐓 𝐔𝐒𝐄𝐑!😇👑* 
+        const formattedInfo = `*𝐇𝐄𝐋𝐋𝐎 𝐓𝐇𝐄𝐑𝐄 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃 𝐖.𝐀 𝐁𝐎𝐓 𝐔𝐒𝐄𝐑!😇👑* 
 
-> *𝚂𝙸𝙼𝙿𝙻𝙴, 𝙸𝙲𝚈, 𝙲𝙾𝙻𝙳 & 𝚁𝙸𝙲𝙷 𝙻𝙾𝙰𝙳𝙴𝙳 𝙱𝙾𝚃 𝚆𝙸𝚃𝙷 𝙰𝙼𝙰𝚉𝙸𝙽𝙶 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂, 𝙱𝙻𝙾𝙾𝙳 𝚇𝙼𝙳 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝚄𝚂𝙴𝚁 𝙱𝙾𝚃 .*❄️
+> *sɪᴍᴘʟᴇ, ɪᴄʏ, ᴄᴏʟᴅ  & ʀɪᴄʜ ʟᴏᴀᴅᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs, ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ.*❄️
 
 *𝐓𝐇𝐀𝐍𝐊𝐒 𝐅𝐎𝐑 𝐔𝐒𝐄𝐈𝐍𝐆 𝐁𝐋𝐎𝐎𝐃-𝐗𝐌𝐃🫶* 
 
 > *ᴅᴏɴ'ᴛ ғᴏʀɢᴇᴛ ᴛᴏ sᴛᴀʀ & ғᴏʀᴋ ᴛʜᴇ ʀᴇᴘᴏ🌟🍴*
 
-*REPO එක ඔනිමද ලමයෝ.....😚💗*
+*REPO එක ඔනීමද ලමයෝ 😚💗*
 ──────────────────
 ${readMore}
 \`BOT NAME:\`❄️
@@ -112,7 +60,22 @@ ${readMore}
 \`DESCRIPTION:\`📃
 > ${repoData.description || 'No description'}\n
 ──────────────────
-\n> *© ᴘᴏᴡᴇʀᴅ ʙʏ ʙʟᴏᴏᴅ xᴍᴅ* 🎐`;
+\n> *© 𝗣𝗢𝗪𝗘𝗥𝗗 𝗕𝗬 𝗕𝗟𝗢𝗢𝗗 𝗫𝗠𝗗* 🎐`;
+  
+        // Contact message for verified context
+        const verifiedContact = {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "SACHITHRA MADUSANKA VERIFIED ✅",
+                    vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD XMD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD"
+                }
+            }
+        };
 
         // Send an image with the formatted info as a caption and context info
         await conn.sendMessage(from, {
@@ -124,11 +87,11 @@ ${readMore}
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: 'BLOOD XMD',
+                    newsletterName: '☇ Bʅσσԃ xɱԃ suppσrt  ⃪🤖͎᪳᪳𝆺𝅥',
                     serverMessageId: 143
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: verifiedContact });
 
         // Send the audio file with context info
         await conn.sendMessage(from, {
@@ -140,12 +103,12 @@ ${readMore}
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: 'BLOOD XMD',
+                    newsletterJid: '120363302677217436@newsletter',
+                    newsletterName: '☇ Bʅσσԃ xɱԃ suppσrt⃪🤖͎᪳᪳𝆺𝅥',
                     serverMessageId: 143
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: verifiedContact });
 
     } catch (error) {
         console.error("Error in repo command:", error);
