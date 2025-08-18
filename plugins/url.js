@@ -68,7 +68,7 @@ cmd({
 
     // Send response with newsletter
     await client.sendMessage(message.chat, { 
-      image: { url: `https://i.ibb.co/wN6Gw0ZF/lordcasey.jpg` },  
+      image: { url: `https://files.catbox.moe/rklpuz.jpg` },  
       caption: status,
       contextInfo: {
         mentionedJid: [message.sender],
