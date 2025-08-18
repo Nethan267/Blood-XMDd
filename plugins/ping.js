@@ -20,8 +20,8 @@ const verifiedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "CASEYRHODES VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: Caseyrhodes VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=254112192119:+254112192119\nEND:VCARD"
+      displayName: "SACHITHRA MADUSANKA✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD XMD VERIFIED ✅\nORG:CASEYRHODES-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD"
     }
   }
 };
@@ -67,7 +67,7 @@ cmd({
     }
 
     const stylishText = `
-> *𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-𝐗𝐌𝐃: ${latencyMs}ms ${reactionEmoji}*
+> *𝐁𝐋𝐎𝐎𝐃 - 𝐗𝐌𝐃: ${latencyMs}ms ${reactionEmoji}*
     `.trim();
 
     await conn.sendMessage(from, {
@@ -77,12 +77,12 @@ cmd({
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363302677217436@newsletter',
-          newsletterName: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐓𝐄𝐂𝐇",
+          newsletterJid: '120363419102725912@newsletter',
+          newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐏𝐈𝐍𝐆",
           serverMessageId: 143
         },
         externalAdReply: {
-          title: "𝐂𝐚𝐬𝐞𝐲𝐫𝐡𝐨𝐝𝐞𝐬 | 𝐩𝐢𝐧𝐠 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐞🚀",
+          title: "𝐁𝐥𝐨𝐨𝐝 𝐱𝐦𝐝 | 𝐩𝐢𝐧𝐠 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐞🚀",
           body: "Speed • Stability • Sync",
           thumbnailUrl: 'https://files.catbox.moe/y3j3kl.jpg',
           sourceUrl: whatsappChannelLink,
