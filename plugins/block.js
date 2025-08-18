@@ -31,7 +31,7 @@ async (conn, m, { reply, react }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🌟'',
+                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🌟',
                     serverMessageId: 143
                 }
             }
