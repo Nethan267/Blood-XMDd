@@ -2,78 +2,91 @@ const { cmd } = require('../command');
 
 cmd({
     pattern: "block",
-    desc: "Blocks a person",
+    desc: "Blocks this chat",
     category: "owner",
     react: "🚫",
     filename: __filename
 },
-async (conn, m, { reply, q, react }) => {
+async (conn, m, { reply, react }) => {
     // Get the bot owner's number dynamically
     const botOwner = conn.user.id.split(":")[0] + "@s.whatsapp.net";
     
     if (m.sender !== botOwner) {
         await react("❌");
-        return reply("Only the bot owner can use this command.");
-    }
-
-    let jid;
-    if (m.quoted) {
-        jid = m.quoted.sender; // If replying to a message, get sender JID
-    } else if (m.mentionedJid.length > 0) {
-        jid = m.mentionedJid[0]; // If mentioning a user, get their JID
-    } else if (q && q.includes("@")) {
-        jid = q.replace(/[@\s]/g, '') + "@s.whatsapp.net"; // If manually typing a JID
-    } else {
-        await react("❌");
-        return reply("Please mention a user or reply to their message.");
+        return reply("_Only the bot owner can use this command._");
     }
 
     try {
-        await conn.updateBlockStatus(jid, "block");
+        const chatId = m.chat; // Get current chat ID
         await react("✅");
-        reply(`Successfully blocked @${jid.split("@")[0]}`, { mentions: [jid] });
+        
+        // Combine both messages into one send operation
+        await conn.sendMessage(m.chat, { 
+            text: `_Successfully blocked this chat_`,
+            image: { url: `https://files.catbox.moe/y3j3kl.jpg` },  
+            caption: "*𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐍𝐄𝐖𝐒𝐋𝐄𝐓𝐓𝐄𝐑*\n\nThis chat has been blocked by the owner.",
+            contextInfo: {
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🌟'',
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: m });
+        
+        // Actually block the chat after sending the message
+        await conn.updateBlockStatus(chatId, "block");
     } catch (error) {
         console.error("Block command error:", error);
         await react("❌");
-        reply("Failed to block the user.");
+        reply(`_Failed to block this chat._\nError: ${error.message}_`);
     }
 });
 
 cmd({
     pattern: "unblock",
-    desc: "Unblocks a person",
+    desc: "Unblocks this chat",
     category: "owner",
     react: "🔓",
     filename: __filename
 },
-async (conn, m, { reply, q, react }) => {
-    // Get the bot owner's number dynamically
+async (conn, m, { reply, react }) => {
     const botOwner = conn.user.id.split(":")[0] + "@s.whatsapp.net";
 
     if (m.sender !== botOwner) {
         await react("❌");
-        return reply("Only the bot owner can use this command.");
-    }
-
-    let jid;
-    if (m.quoted) {
-        jid = m.quoted.sender;
-    } else if (m.mentionedJid.length > 0) {
-        jid = m.mentionedJid[0];
-    } else if (q && q.includes("@")) {
-        jid = q.replace(/[@\s]/g, '') + "@s.whatsapp.net";
-    } else {
-        await react("❌");
-        return reply("Please mention a user or reply to their message.");
+        return reply("_Only the bot owner can use this command._");
     }
 
     try {
-        await conn.updateBlockStatus(jid, "unblock");
+        const chatId = m.chat; // Get current chat ID
         await react("✅");
-        reply(`Successfully unblocked @${jid.split("@")[0]}`, { mentions: [jid] });
+        
+        // Combine both messages into one send operation
+        await conn.sendMessage(m.chat, { 
+            text: `_Successfully unblocked this chat_`,
+            image: { url: `https://files.catbox.moe/y3j3kl.jpg` },  
+            caption: "*𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐍𝐄𝐖𝐒𝐋𝐄𝐓𝐓𝐄𝐑*\n\nThis chat has been unblocked by the owner.",
+            contextInfo: {
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 🌟',
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: m });
+        
+        // Actually unblock the chat after sending the message
+        await conn.updateBlockStatus(chatId, "unblock");
     } catch (error) {
         console.error("Unblock command error:", error);
         await react("❌");
-        reply("Failed to unblock the user.");
+        reply(`_Failed to unblock this chat._\nError: ${error.message}_`);
     }
-});           
+});
