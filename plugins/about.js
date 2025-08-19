@@ -12,8 +12,9 @@ async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender
 try{
 let about = `
 *╭━━〔 CASEYRHODES XMD 〕━━┈⊷*
-*👋 HELLO ${pushname}*
-
+*▎*
+*👋 HELLO BLOOD XMD BOT USER ${pushname}*
+*▎*
 *╰──────────────┈⊷*
 *╭━━━〔 MY ABOUT 〕━━━┈⊷*
 *┃★╭──────────────*
@@ -45,7 +46,7 @@ let about = `
 *•────────────•⟢*
 `
 
-await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/y3j3kl.jpg`},caption:about,
+await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/2j1t44.jpg`},caption:about,
                              contextInfo: {
     mentionedJid: [m.sender],
     forwardingScore: 999,
