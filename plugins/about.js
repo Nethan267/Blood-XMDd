@@ -12,9 +12,7 @@ async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender
 try{
 let about = `
 *╭━━〔 CASEYRHODES XMD 〕━━┈⊷*
-*▎*
-*👋 HELLO BLOOD XMD BOT USER ${pushname}*
-*▎*
+*👋 HELLO BLOOD XMD BOT USER @${pushname}*
 *╰──────────────┈⊷*
 *╭━━━〔 MY ABOUT 〕━━━┈⊷*
 *┃★╭──────────────*
