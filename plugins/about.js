@@ -11,9 +11,8 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let about = `
-*╭━━〔 🩸 BLOOD XMD 🩸 〕━━┈⊷*
-
-*👋 HELLO BLOOD XMD USER ${pushname}*
+*╭━━〔 CASEYRHODES XMD 〕━━┈⊷*
+*👋 HELLO ${pushname}*
 
 *╰──────────────┈⊷*
 *╭━━━〔 MY ABOUT 〕━━━┈⊷*
@@ -42,18 +41,18 @@ let about = `
 *╰━━━━━━━━━━━━━━━┈⊷*
 
 *•────────────•⟢*
-> © ᴾᴼᵂᴱᴿᴰ ᴮʸ ᴮᴸᴼᴼᴰ ˣᴹᴰ
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs xᴍᴅ₂₅₄
 *•────────────•⟢*
+`
 
-
-await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/rklpuz.jpg`},caption:about,
+await conn.sendMessage(from,{image:{url:`https://files.catbox.moe/y3j3kl.jpg`},caption:about,
                              contextInfo: {
     mentionedJid: [m.sender],
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363419102725912@newsletter',
-      newsletterName: 'BLOOD XMD ABOUT',
+      newsletterJid: '120363302677217436@newsletter',
+      newsletterName: 'CASEYRHODES-XMD',
       serverMessageId: 999
     }
   }
