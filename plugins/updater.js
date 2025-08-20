@@ -16,7 +16,7 @@ cmd({
     if (!isOwner) return reply("This command is only for the bot owner.");
 
     try {
-        await reply("🔍 Checking for CASEYRHODES-XMD updates...");
+        await reply("🔍 Checking for BLOOD-XMD updates...");
 
         // Fetch the latest commit hash from GitHub
         const { data: commitData } = await axios.get("https://api.github.com/repos/BLOOD-MAIN/Blood-XMD/commits/main");
@@ -26,10 +26,10 @@ cmd({
         const currentHash = await getCommitHash();
 
         if (latestCommitHash === currentHash) {
-            return reply("✅ Your CASEYRHODES-XMD bot is already up-to-date!");
+            return reply("✅ Your BLOOD-XMD bot is already up-to-date!");
         }
 
-        await reply("🚀 Updating CASEYRHODES-XMD Bot...");
+        await reply("🚀 Updating BLOOD-XMD Bot...");
 
         // Download the latest code
         const zipPath = path.join(__dirname, "latest.zip");
