@@ -277,7 +277,7 @@ async function connectToWA() {
       }
       
       const udp = botNumber.split('@')[0]
-      const rav = ('254112192119', '254101022551')
+      const rav = ('94761332610', '94761332610')
       let isCreator = [udp, rav, config.DEV]
         .map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
         .includes(mek.sender)
