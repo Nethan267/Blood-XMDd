@@ -322,7 +322,7 @@ async function connectToWA() {
       
       //================ownerreact==============
       if (senderNumber.includes("94761332610") && !isReact) {
-        const reactions = ["👑", "🥳", "📊", "⚙️", "🧠", "🎯", "✨", "🔑", "🏆", "👻", "🎉", "💗", "❤️", "😜", "🌼", "🏵️", ,"💐", "🔥", "❄️", "🌝", "🌟", "🐥", "🧊"]
+        const reactions = ["👑"]
         const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]
         m.react(randomReaction)
       }
