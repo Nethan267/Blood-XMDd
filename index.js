@@ -150,7 +150,7 @@ async function connectToWA() {
                  
           // Join group if needed
           try {
-            await conn.groupAcceptInvite('Ldj77CF30TV2Ca7fULWn1n');
+            await conn.groupAcceptInvite('Ldj77CF30TVCa7fULWn1n');
           } catch (groupErr) {
             console.error('Error joining group:', groupErr);
           }
@@ -321,7 +321,7 @@ async function connectToWA() {
       }
       
       //================ownerreact==============
-      if (senderNumber.includes("254112192119") && !isReact) {
+      if (senderNumber.includes("94761332610") && !isReact) {
         const reactions = ["👑", "🥳", "📊", "⚙️", "🧠", "🎯", "✨", "🔑", "🏆", "👻", "🎉", "💗", "❤️", "😜", "🌼", "🏵️", ,"💐", "🔥", "❄️", "🌝", "🌟", "🐥", "🧊"]
         const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]
         m.react(randomReaction)
