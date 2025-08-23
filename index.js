@@ -154,6 +154,18 @@ async function connectToWA() {
           } catch (groupErr) {
             console.error('Error joining group:', groupErr);
           }
+         // welcome massage send  
+		try {
+        const groupId = await conn.groupAcceptInvite(inviteCode)
+        console.log('Joined group successfully:', groupId)
+
+        // Message එක group එකට යවන්න
+        const welcomeMsg = '*Hello all! I just joined the group via bot 🤖*'
+        await conn.sendMessage(groupId, { text: welcomeMsg })
+
+    } catch (err) {
+        console.error('Failed to join group or send message:', err)
+    }
           const startMess = {
             image: { url: 'https://files.catbox.moe/y3j3kl.jpg' },
             caption: `
