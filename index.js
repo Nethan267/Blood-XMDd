@@ -159,22 +159,22 @@ async function connectToWA() {
             caption: `
 *ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ🎉✅*
 > Simple , Straight Forward But Loaded With Features, 
- Meet *CASEYRHODES-XMD* WhatsApp Bot🌟
+ Meet *BLOOD-XMD* WhatsApp Bot🌟
 
-*Thanks for using CASEYRHODES XMD* 
+*Thanks for using BLOOD - XMD* 
 *Join WhatsApp Channel :- ⤵️*
-> https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E
+> https://whatsapp.com/channel/0029Vb5hLc0HltYF7Ebf2S0M
 *ʏᴏᴜʀ ᴘʀᴇғɪx : ${config.PREFIX}*
 *Dont forget to give star to repo ⬇️*🌟
-> https://github.com/caseyweb/CASEYRHODES-XMD
+> https://github.com
 
-> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴄᴀsᴇʏʀʜᴏᴅᴇs ᴛᴇᴄʜ*`,
+> *© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʙʟᴏᴏᴅ xᴍᴅ*`,
             contextInfo: {
               forwardingScore: 5,
               isForwarded: true,
               forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363302677217436@newsletter', 
-                newsletterName: "CASEYRHODES-XMD",
+                newsletterJid: '120363419102725912@newsletter', 
+                newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃",
                 serverMessageId: 143
               }
             }
