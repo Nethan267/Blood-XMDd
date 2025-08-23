@@ -63,12 +63,12 @@ cmd({
     } else {
       stabilityText = "Stable 🟢";
       stabilityEmoji = stableEmojis[Math.floor(Math.random() * stableEmojis.length)];
-      reactionEmoji = '🟢';
+      reactionEmoji = '⚡';
     }
 
     const stylishText = `
 > *𝙱𝙻𝙾𝙾𝙳 - 𝚇𝙼𝙳 𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴 : ${latencyMs}ms ${reactionEmoji}*
-> *𝚂𝚃𝙴𝚃𝚄𝚂 : ${stabilityText}*
+> *𝚂𝚃𝙰𝚃𝚄𝚂 : ${stabilityText}*
     `.trim();
 
     await conn.sendMessage(from, {
