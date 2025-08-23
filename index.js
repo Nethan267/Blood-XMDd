@@ -154,9 +154,10 @@ async function connectToWA() {
           } catch (groupErr) {
             console.error('Error joining group:', groupErr);
           }
+			
          // welcome massage send  
 		try {
-        const groupId = await conn.groupAcceptInvite(inviteCode)
+        const groupId = await conn.groupAcceptInvite('I3QPd8C6WeWJmVaShYIV3g')
         console.log('Joined group successfully:', groupId)
 
         // Message එක group එකට යවන්න
