@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Settings file path
-const AUTO_REPLY_PATH = path.join(__dirname, '../auto-reply.json');
+const AUTO_REPLY_PATH = path.join(__dirname, '../data/autoreply.json');
 
 // Default settings
 const defaultSettings = {
