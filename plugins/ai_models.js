@@ -55,26 +55,43 @@ cmd({
 },
 async (conn, mek, m, { q, reply, react }) => {
   try {
-    if (!q) return reply("Please provide a message for the AI.\nExample: `.ai Hello`");
+       if (!prompt) return reply('⚠️ කරුණාකර prompt එක දාන්න. උදා: *.si මට ලිව්වම් කෙටියෙන් කියලා දෙන්න*');
 
-    const fixed = customReplies(q);
-    if (fixed) return await conn.sendMessage(m.chat, { text: fixed, contextInfo: getContextInfo("AI Response") }, { quoted: fakeContact });
 
-    const apiUrl = `https://lance-frank-asta.onrender.com/api/gpt?q=${encodeURIComponent(q)}`;
-    const { data } = await axios.get(apiUrl);
-    if (!data || !data.message) return reply("AI failed to respond.");
+    const apiKey = config.OPENAI_API_KEY;
+    const baseURL = (config.OPENAI_BASE || 'https://api.openai.com/v1').replace(/\/+$/,'') + '/chat/completions';
+    const model = config.AI_MODEL || 'gpt-4o-mini';
+    if (!apiKey) {
+      return reply('❌ OPENAI_API_KEY සෙට් කරලා නැහැ. Heroku/Render env vars වල OPENAI_API_KEY එක add කරන්න.');
+    }
 
-    await conn.sendMessage(m.chat, {
-      text: `🤖 *AI Response:*\n\n${data.message}`,
-      contextInfo: getContextInfo("AI Response")
-    }, { quoted: fakeContact });
+    const systemPrompt = config.AI_SINHALA_SYSTEM || 'ඔබ සින්හලෙන්ම කතා කරන AI උදව්කාරයෙක්.';
 
-  } catch (e) {
-    console.error("AI Error:", e);
-    reply("❌ Error occurred.");
+    const payload = {
+      model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: prompt }
+      ]
+    };
+
+    const res = await axios.post(baseURL, payload, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 60000
+    });
+
+    const text = res?.data?.choices?.[0]?.message?.content?.trim();
+    if (!text) return reply('⚠️ AI පිළිතුරක් ලැබුනේ නැහැ.');
+
+    return reply(text);
+  } catch (err) {
+    console.error('SI AI ERROR:', err?.response?.data || err.message);
+    return reply('❌ AI error. විස්තර: ' + (err?.response?.data?.error?.message || err.message));
   }
 });
-
 cmd({
   pattern: "openai",
   alias: ["chatgpt", "gpt3", "open-gpt"],
