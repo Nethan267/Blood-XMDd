@@ -41,7 +41,7 @@ async (conn, mek, m, { from, sender, reply, isGroup }) => {
       message: {
         contactMessage: {
           displayName: "SACHITHRA MADUSANKA ✅",
-          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: CASEYRHODES ✅\nORG: CASEYRHODES-XMD;\nTEL;type=CELL;type=VOICE;waid=254700000000:+254 700 000000\nEND:VCARD",
+          vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: BLOOD-XMD ✅\nORG: BLOOD-XMDD;\nTEL;type=CELL;type=VOICE;waid=94761332610:+94761332610\nEND:VCARD",
           jpegThumbnail: Buffer.from([])
         }
       }
