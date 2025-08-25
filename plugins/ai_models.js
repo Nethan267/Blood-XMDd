@@ -59,7 +59,7 @@ async (conn, mek, m, { q, reply, react }) => {
 
 
     const apiKey = config.OPENAI_API_KEY;
-    const baseURL = (config.OPENAI_BASE || 'https://api.openai.com/v1').replace(/\/+$/,'') + '/chat/completions';
+    const baseURL = (config.OPENAI_BASE || 'https://lance-frank-asta.onrender.com/api/gpt?q=${encodeURIComponent(q)}').replace(/\/+$/,'') + '/chat/completions';
     const model = config.AI_MODEL || 'gpt-4o-mini';
     if (!apiKey) {
       return reply('❌ OPENAI_API_KEY සෙට් කරලා නැහැ. Heroku/Render env vars වල OPENAI_API_KEY එක add කරන්න.');
