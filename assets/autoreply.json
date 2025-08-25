@@ -1,17 +1,17 @@
 {
-  "mk": "*💖HI*... *How are You..!*",
-  "Good Morning": "*Good Morning 🌅*",
-  "Good Night": "*Good Night..🌉*",
-  "Bye": "*Bye bye....*",
-  "Aslam o Alykum": "> *walykum salam ❤‍🔥🤌🏻*",
-  "owner": "*Dml Tech 🫀*",
-  "dml": "Kis Na Yad Kia Mujha?..🐵",
-  "link": "*Raha Nhai Jata 🌚🙌😂*",
-  "Haram": "*Haram Haram Haram🙈🤣*",
-  "dafa": "*dfm.😣*",
-  "dhur": "*dhur bagrt.🔪*",
-  "hmm": "> *Hamm.🌚*",
-  "lanat": "*Lakhhhhhhhhhh Di Lanat 🙌😂*",
-  "uff": "*💋 Hyee*",
-  "love": "*Lub you too 💗😁*"
+  "enabled": true,
+  "responses": [
+    {
+      "pattern": "හෙලෝ",
+      "reply": "හෙලෝ! ඔබට කෙසේද?"
+    },
+    {
+      "pattern": "කොහොමද",
+      "reply": "මම හොඳින්. ඔබට කෙසේද?"
+    },
+    {
+      "pattern": "සුභ උදෑසනක්",
+      "reply": "සුභ උදෑසනක්! ඔබට අද දිනය ලස්සන වේවා!"
+    }
+  ]
 }
