@@ -150,17 +150,6 @@ async (conn, mek, m, { from, quoted, reply }) => {
                     break;
                     default:
                         reply("Invalid option. Please select a valid option🔴");
-                }
-
-            }
-        });
-
-
-    } catch (e) {
-        console.error(e);
-        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
-        reply('An error occurred while processing your request.');
-    }
 
         // Send message with an image
         await conn.sendMessage(
