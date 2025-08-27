@@ -155,6 +155,14 @@ async (conn, mek, m, { from, quoted, reply }) => {
             }
         });
 
+
+    } catch (e) {
+        console.error(e);
+        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
+        reply('An error occurred while processing your request.');
+    }
+});
+
         // Send message with an image
         await conn.sendMessage(
             from,
