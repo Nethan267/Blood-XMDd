@@ -7,7 +7,7 @@ function isEnabled(value) {
     return value && value.toString().toLowerCase() === "true";
 }
 
-// Save config to config.js
+// Save updated config
 function saveConfig() {
     const filePath = path.join(__dirname, '../config.js');
     fs.writeFileSync(filePath, `module.exports = ${JSON.stringify(config, null, 4)};`);
@@ -22,42 +22,58 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
-        const settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】* 〕─⊷
-┃ *⚙️ SETTINGS MENU ⚙️*
-┃────────────────────
-┃ 1️⃣ Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 1.1 ON | 1.2 OFF
-┃ 2️⃣ Auto Reply Status: ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 2.1 ON | 2.2 OFF
-┃ 3️⃣ Auto Reply: ${isEnabled(config.AUTO_REPLY) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 3.1 ON | 3.2 OFF
-┃ 4️⃣ Auto Sticker: ${isEnabled(config.AUTO_STICKER) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 4.1 ON | 4.2 OFF
-┃ 5️⃣ Auto Voice: ${isEnabled(config.AUTO_VOICE) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 5.1 ON | 5.2 OFF
-┃ 6️⃣ Owner React: ${isEnabled(config.OWNER_REACT) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 6.1 ON | 6.2 OFF
-┃ 7️⃣ Custom Reacts: ${isEnabled(config.CUSTOM_REACT) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 7.1 ON | 7.2 OFF
-┃ 8️⃣ Auto React: ${isEnabled(config.AUTO_REACT) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 8.1 ON | 8.2 OFF
-┃ 9️⃣ Delete Links: ${isEnabled(config.DELETE_LINKS) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 9.1 ON | 9.2 OFF
-┃ 🔟 Anti-Link: ${isEnabled(config.ANTI_LINK) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 10.1 ON | 10.2 OFF
-┃ 1️⃣1️⃣ Anti-Bad Words: ${isEnabled(config.ANTI_BAD) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 11.1 ON | 11.2 OFF
-┃ 1️⃣2️⃣ Auto Typing: ${isEnabled(config.AUTO_TYPING) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 12.1 ON | 12.2 OFF
-┃ 1️⃣3️⃣ Auto Recording: ${isEnabled(config.AUTO_RECORDING) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 13.1 ON | 13.2 OFF
-┃ 1️⃣4️⃣ Always Online: ${isEnabled(config.ALWAYS_ONLINE) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 14.1 ON | 14.2 OFF
-┃ 1️⃣5️⃣ Public Mode: ${isEnabled(config.PUBLIC_MODE) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 15.1 ON | 15.2 OFF
-┃ 1️⃣6️⃣ Read Message: ${isEnabled(config.READ_MESSAGE) ? "✅ *ON*" : "❌ *OFF*"}
-┃    ➤ 16.1 ON | 16.2 OFF
-╰────────────────────`;
+        const settingsMenu = `╭─〔 *⚙️ BLOOD XMD SETTINGS ⚙️* 〕─⊷
+┃
+┃ 1️⃣ Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 1.1 ON | 1.2 OFF
+┃
+┃ 2️⃣ Auto Reply Status: ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 2.1 ON | 2.2 OFF
+┃
+┃ 3️⃣ Auto Reply: ${isEnabled(config.AUTO_REPLY) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 3.1 ON | 3.2 OFF
+┃
+┃ 4️⃣ Auto Sticker: ${isEnabled(config.AUTO_STICKER) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 4.1 ON | 4.2 OFF
+┃
+┃ 5️⃣ Auto Voice: ${isEnabled(config.AUTO_VOICE) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 5.1 ON | 5.2 OFF
+┃
+┃ 6️⃣ Owner React: ${isEnabled(config.OWNER_REACT) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 6.1 ON | 6.2 OFF
+┃
+┃ 7️⃣ Custom Reacts: ${isEnabled(config.CUSTOM_REACT) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 7.1 ON | 7.2 OFF
+┃
+┃ 8️⃣ Auto React: ${isEnabled(config.AUTO_REACT) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 8.1 ON | 8.2 OFF
+┃
+┃ 9️⃣ Delete Links: ${isEnabled(config.DELETE_LINKS) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 9.1 ON | 9.2 OFF
+┃
+┃ 🔟 Anti-Link: ${isEnabled(config.ANTI_LINK) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 10.1 ON | 10.2 OFF
+┃
+┃ 1️⃣1️⃣ Anti-Bad Words: ${isEnabled(config.ANTI_BAD) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 11.1 ON | 11.2 OFF
+┃
+┃ 1️⃣2️⃣ Auto Typing: ${isEnabled(config.AUTO_TYPING) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 12.1 ON | 12.2 OFF
+┃
+┃ 1️⃣3️⃣ Auto Recording: ${isEnabled(config.AUTO_RECORDING) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 13.1 ON | 13.2 OFF
+┃
+┃ 1️⃣4️⃣ Always Online: ${isEnabled(config.ALWAYS_ONLINE) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 14.1 ON | 14.2 OFF
+┃
+┃ 1️⃣5️⃣ Public Mode: ${isEnabled(config.PUBLIC_MODE) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 15.1 ON | 15.2 OFF
+┃
+┃ 1️⃣6️⃣ Read Message: ${isEnabled(config.READ_MESSAGE) ? "✅ ON" : "❌ OFF"}
+┃     ➤ 16.1 ON | 16.2 OFF
+┃
+╰────────────────────
+*🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
         // Send settings menu
         const sentMsg = await conn.sendMessage(from, {
@@ -83,50 +99,55 @@ cmd({
             if (ctx && ctx.stanzaId === sentMsg.key.id) {
                 let confirmMsg = "";
 
-                switch (text) {
-                    case "1.1": config.AUTO_STATUS_SEEN = "true"; confirmMsg = "✅ Auto Read Status ENABLED"; break;
-                    case "1.2": config.AUTO_STATUS_SEEN = "false"; confirmMsg = "❌ Auto Read Status DISABLED"; break;
-                    case "2.1": config.AUTO_STATUS_REPLY = "true"; confirmMsg = "✅ Auto Reply Status ENABLED"; break;
-                    case "2.2": config.AUTO_STATUS_REPLY = "false"; confirmMsg = "❌ Auto Reply Status DISABLED"; break;
-                    case "3.1": config.AUTO_REPLY = "true"; confirmMsg = "✅ Auto Reply ENABLED"; break;
-                    case "3.2": config.AUTO_REPLY = "false"; confirmMsg = "❌ Auto Reply DISABLED"; break;
-                    case "4.1": config.AUTO_STICKER = "true"; confirmMsg = "✅ Auto Sticker ENABLED"; break;
-                    case "4.2": config.AUTO_STICKER = "false"; confirmMsg = "❌ Auto Sticker DISABLED"; break;
-                    case "5.1": config.AUTO_VOICE = "true"; confirmMsg = "✅ Auto Voice ENABLED"; break;
-                    case "5.2": config.AUTO_VOICE = "false"; confirmMsg = "❌ Auto Voice DISABLED"; break;
-                    case "6.1": config.OWNER_REACT = "true"; confirmMsg = "✅ Owner React ENABLED"; break;
-                    case "6.2": config.OWNER_REACT = "false"; confirmMsg = "❌ Owner React DISABLED"; break;
-                    case "7.1": config.CUSTOM_REACT = "true"; confirmMsg = "✅ Custom Reacts ENABLED"; break;
-                    case "7.2": config.CUSTOM_REACT = "false"; confirmMsg = "❌ Custom Reacts DISABLED"; break;
-                    case "8.1": config.AUTO_REACT = "true"; confirmMsg = "✅ Auto React ENABLED"; break;
-                    case "8.2": config.AUTO_REACT = "false"; confirmMsg = "❌ Auto React DISABLED"; break;
-                    case "9.1": config.DELETE_LINKS = "true"; confirmMsg = "✅ Delete Links ENABLED"; break;
-                    case "9.2": config.DELETE_LINKS = "false"; confirmMsg = "❌ Delete Links DISABLED"; break;
-                    case "10.1": config.ANTI_LINK = "true"; confirmMsg = "✅ Anti-Link ENABLED"; break;
-                    case "10.2": config.ANTI_LINK = "false"; confirmMsg = "❌ Anti-Link DISABLED"; break;
-                    case "11.1": config.ANTI_BAD = "true"; confirmMsg = "✅ Anti-Bad Words ENABLED"; break;
-                    case "11.2": config.ANTI_BAD = "false"; confirmMsg = "❌ Anti-Bad Words DISABLED"; break;
-                    case "12.1": config.AUTO_TYPING = "true"; confirmMsg = "✅ Auto Typing ENABLED"; break;
-                    case "12.2": config.AUTO_TYPING = "false"; confirmMsg = "❌ Auto Typing DISABLED"; break;
-                    case "13.1": config.AUTO_RECORDING = "true"; confirmMsg = "✅ Auto Recording ENABLED"; break;
-                    case "13.2": config.AUTO_RECORDING = "false"; confirmMsg = "❌ Auto Recording DISABLED"; break;
-                    case "14.1": config.ALWAYS_ONLINE = "true"; confirmMsg = "✅ Always Online ENABLED"; break;
-                    case "14.2": config.ALWAYS_ONLINE = "false"; confirmMsg = "❌ Always Online DISABLED"; break;
-                    case "15.1": config.PUBLIC_MODE = "true"; confirmMsg = "✅ Public Mode ENABLED"; break;
-                    case "15.2": config.PUBLIC_MODE = "false"; confirmMsg = "❌ Public Mode DISABLED"; break;
-                    case "16.1": config.READ_MESSAGE = "true"; confirmMsg = "✅ Read Message ENABLED"; break;
-                    case "16.2": config.READ_MESSAGE = "false"; confirmMsg = "❌ Read Message DISABLED"; break;
-                    default: confirmMsg = "❌ Invalid option. Use e.g. 1.1 or 1.2";
+                const updates = {
+                    "1.1": ["AUTO_STATUS_SEEN", "true", "✅ Auto Read Status ENABLED"],
+                    "1.2": ["AUTO_STATUS_SEEN", "false", "❌ Auto Read Status DISABLED"],
+                    "2.1": ["AUTO_STATUS_REPLY", "true", "✅ Auto Reply Status ENABLED"],
+                    "2.2": ["AUTO_STATUS_REPLY", "false", "❌ Auto Reply Status DISABLED"],
+                    "3.1": ["AUTO_REPLY", "true", "✅ Auto Reply ENABLED"],
+                    "3.2": ["AUTO_REPLY", "false", "❌ Auto Reply DISABLED"],
+                    "4.1": ["AUTO_STICKER", "true", "✅ Auto Sticker ENABLED"],
+                    "4.2": ["AUTO_STICKER", "false", "❌ Auto Sticker DISABLED"],
+                    "5.1": ["AUTO_VOICE", "true", "✅ Auto Voice ENABLED"],
+                    "5.2": ["AUTO_VOICE", "false", "❌ Auto Voice DISABLED"],
+                    "6.1": ["OWNER_REACT", "true", "✅ Owner React ENABLED"],
+                    "6.2": ["OWNER_REACT", "false", "❌ Owner React DISABLED"],
+                    "7.1": ["CUSTOM_REACT", "true", "✅ Custom Reacts ENABLED"],
+                    "7.2": ["CUSTOM_REACT", "false", "❌ Custom Reacts DISABLED"],
+                    "8.1": ["AUTO_REACT", "true", "✅ Auto React ENABLED"],
+                    "8.2": ["AUTO_REACT", "false", "❌ Auto React DISABLED"],
+                    "9.1": ["DELETE_LINKS", "true", "✅ Delete Links ENABLED"],
+                    "9.2": ["DELETE_LINKS", "false", "❌ Delete Links DISABLED"],
+                    "10.1": ["ANTI_LINK", "true", "✅ Anti-Link ENABLED"],
+                    "10.2": ["ANTI_LINK", "false", "❌ Anti-Link DISABLED"],
+                    "11.1": ["ANTI_BAD", "true", "✅ Anti-Bad Words ENABLED"],
+                    "11.2": ["ANTI_BAD", "false", "❌ Anti-Bad Words DISABLED"],
+                    "12.1": ["AUTO_TYPING", "true", "✅ Auto Typing ENABLED"],
+                    "12.2": ["AUTO_TYPING", "false", "❌ Auto Typing DISABLED"],
+                    "13.1": ["AUTO_RECORDING", "true", "✅ Auto Recording ENABLED"],
+                    "13.2": ["AUTO_RECORDING", "false", "❌ Auto Recording DISABLED"],
+                    "14.1": ["ALWAYS_ONLINE", "true", "✅ Always Online ENABLED"],
+                    "14.2": ["ALWAYS_ONLINE", "false", "❌ Always Online DISABLED"],
+                    "15.1": ["PUBLIC_MODE", "true", "✅ Public Mode ENABLED"],
+                    "15.2": ["PUBLIC_MODE", "false", "❌ Public Mode DISABLED"],
+                    "16.1": ["READ_MESSAGE", "true", "✅ Read Message ENABLED"],
+                    "16.2": ["READ_MESSAGE", "false", "❌ Read Message DISABLED"]
+                };
+
+                if (updates[text]) {
+                    const [key, value, message] = updates[text];
+                    config[key] = value;
+                    saveConfig();
+                    confirmMsg = message;
+                } else {
+                    confirmMsg = "❌ Invalid option. Use e.g. 1.1 or 1.2";
                 }
 
-                saveConfig();
-
                 if(confirmMsg) {
-                    // Channel forward style confirmation
+                    // Send confirmation to channel
                     await conn.sendMessage(
                         '120363419102725912@newsletter', // replace with your channel ID
-                        { text: confirmMsg },
-                        { quoted: mek }
+                        { text: confirmMsg }
                     );
                     // Also reply to user
                     reply(confirmMsg);
