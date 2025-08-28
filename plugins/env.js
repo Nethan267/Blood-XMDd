@@ -23,28 +23,57 @@ cmd({
 }, async (conn, mek, m, { from, reply }) => {
     try {
         // Settings Menu
-        let settingsMenu = `╭〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】* 〕⊷
-┃▸╭───────────
-┃▸┃๏ *SETTINGS MENU 👻*
-┃▸└───────────···๏
-╰────────────────┈⊷
-
-1️⃣ Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ ON" : "❌ OFF"} > 1.1 ON | 1.2 OFF
-2️⃣ Auto Reply Status: ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅ ON" : "❌ OFF"} > 2.1 ON | 2.2 OFF
-3️⃣ Auto Reply: ${isEnabled(config.AUTO_REPLY) ? "✅ ON" : "❌ OFF"} > 3.1 ON | 3.2 OFF
-4️⃣ Auto Sticker: ${isEnabled(config.AUTO_STICKER) ? "✅ ON" : "❌ OFF"} > 4.1 ON | 4.2 OFF
-5️⃣ Auto Voice: ${isEnabled(config.AUTO_VOICE) ? "✅ ON" : "❌ OFF"} > 5.1 ON | 5.2 OFF
-6️⃣ Owner React: ${isEnabled(config.OWNER_REACT) ? "✅ ON" : "❌ OFF"} > 6.1 ON | 6.2 OFF
-7️⃣ Custom Reacts: ${isEnabled(config.CUSTOM_REACT) ? "✅ ON" : "❌ OFF"} > 7.1 ON | 7.2 OFF
-8️⃣ Auto React: ${isEnabled(config.AUTO_REACT) ? "✅ ON" : "❌ OFF"} > 8.1 ON | 8.2 OFF
-9️⃣ Delete Links: ${isEnabled(config.DELETE_LINKS) ? "✅ ON" : "❌ OFF"} > 9.1 ON | 9.2 OFF
-🔟 Anti-Link: ${isEnabled(config.ANTI_LINK) ? "✅ ON" : "❌ OFF"} > 10.1 ON | 10.2 OFF | 10.3 REMOVE
-1️⃣1️⃣ Anti-Bad Words: ${isEnabled(config.ANTI_BAD) ? "✅ ON" : "❌ OFF"} > 11.1 ON | 11.2 OFF
-1️⃣2️⃣ Auto Typing: ${isEnabled(config.AUTO_TYPING) ? "✅ ON" : "❌ OFF"} > 12.1 ON | 12.2 OFF
-1️⃣3️⃣ Auto Recording: ${isEnabled(config.AUTO_RECORDING) ? "✅ ON" : "❌ OFF"} > 13.1 ON | 13.2 OFF
-1️⃣4️⃣ Always Online: ${isEnabled(config.ALWAYS_ONLINE) ? "✅ ON" : "❌ OFF"} > 14.1 ON | 14.2 OFF
-1️⃣5️⃣ Public Mode: ${isEnabled(config.PUBLIC_MODE) ? "✅ ON" : "❌ OFF"} > 15.1 ON | 15.2 OFF
-1️⃣6️⃣ Read Message: ${isEnabled(config.READ_MESSAGE) ? "✅ ON" : "❌ OFF"} > 16.1 ON | 16.2 OFF
+        let settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】* 〕─⊷
+┃ *⚙️ SETTINGS MENU ⚙️*
+┃────────────────────
+┃ 1️⃣ Auto Read Status: ${isEnabled(settings.AUTO_STATUS_SEEN) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 1.1 ON | 1.2 OFF
+┃
+┃ 2️⃣ Auto Reply Status: ${isEnabled(settings.AUTO_STATUS_REPLY) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 2.1 ON | 2.2 OFF
+┃
+┃ 3️⃣ Auto Reply: ${isEnabled(settings.AUTO_REPLY) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 3.1 ON | 3.2 OFF
+┃
+┃ 4️⃣ Auto Sticker: ${isEnabled(settings.AUTO_STICKER) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 4.1 ON | 4.2 OFF
+┃
+┃ 5️⃣ Auto Voice: ${isEnabled(settings.AUTO_VOICE) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 5.1 ON | 5.2 OFF
+┃
+┃ 6️⃣ Owner React: ${isEnabled(settings.OWNER_REACT) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 6.1 ON | 6.2 OFF
+┃
+┃ 7️⃣ Custom Reacts: ${isEnabled(settings.CUSTOM_REACT) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 7.1 ON | 7.2 OFF
+┃
+┃ 8️⃣ Auto React: ${isEnabled(settings.AUTO_REACT) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 8.1 ON | 8.2 OFF
+┃
+┃ 9️⃣ Delete Links: ${isEnabled(settings.DELETE_LINKS) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 9.1 ON | 9.2 OFF
+┃
+┃ 🔟 Anti-Link: ${isEnabled(settings.ANTI_LINK) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 10.1 ON | 10.2 OFF
+┃
+┃ 1️⃣1️⃣ Anti-Bad Words: ${isEnabled(settings.ANTI_BAD) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 11.1 ON | 11.2 OFF
+┃
+┃ 1️⃣2️⃣ Auto Typing: ${isEnabled(settings.AUTO_TYPING) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 12.1 ON | 12.2 OFF
+┃
+┃ 1️⃣3️⃣ Auto Recording: ${isEnabled(settings.AUTO_RECORDING) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 13.1 ON | 13.2 OFF
+┃
+┃ 1️⃣4️⃣ Always Online: ${isEnabled(settings.ALWAYS_ONLINE) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 14.1 ON | 14.2 OFF
+┃
+┃ 1️⃣5️⃣ Public Mode: ${isEnabled(settings.PUBLIC_MODE) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 15.1 ON | 15.2 OFF
+┃
+┃ 1️⃣6️⃣ Read Message: ${isEnabled(settings.READ_MESSAGE) ? "✅ *ON*" : "❌ *OFF*"}
+┃    ➤ 16.1 ON | 16.2 OFF
+╰────────────────────
 
 *🔢 Reply with number e.g. 1.1 (ON) or 1.2 (OFF)*
 `;
