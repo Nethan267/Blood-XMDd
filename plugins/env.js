@@ -66,19 +66,19 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
-        // Send menu message
-        const sentMsg = await conn.sendMessage(from, {
+        // Send menu message (forward style)
+        const menuMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu(),
             contextInfo: {
-                mentionedJid: [m.sender],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
                     newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒🥰",
                     serverMessageId: 143
-                }
+                },
+                mentionedJid: [m.sender]
             }
         }, { quoted: mek });
 
@@ -89,13 +89,12 @@ cmd({
             ptt: true
         }, { quoted: mek });
 
-        // Listen for user replies
+        // Listen for replies
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
             if (!msg.message?.extendedTextMessage) return;
 
             const userReply = msg.message.extendedTextMessage.text.trim().toLowerCase();
-            if (msg.message.extendedTextMessage.contextInfo?.stanzaId !== sentMsg.key.id) return;
 
             let updated = false;
 
@@ -137,14 +136,19 @@ cmd({
 
             if (updated) {
                 saveConfig();
-                await conn.sendMessage(from, { text: "✅ Setting updated!" }, { quoted: mek });
-
-                // Edit original menu message to refresh
+                // Send confirmation message channel style
                 await conn.sendMessage(from, {
-                    image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
-                    caption: settingsMenu(),
-                    contextInfo: { mentionedJid: [m.sender] }
-                }, { quoted: mek });
+                    text: `✅ *Setting updated:* ${userReply}`,
+                    contextInfo: {
+                        forwardingScore: 999,
+                        isForwarded: true,
+                        forwardedNewsletterMessageInfo: {
+                            newsletterJid: '120363419102725912@newsletter',
+                            newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒🥰",
+                            serverMessageId: 144
+                        }
+                    }
+                });
             }
         });
 
