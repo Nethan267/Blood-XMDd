@@ -140,39 +140,55 @@ conn.ev.on('messages.upsert', async (msgUpdate) => {
         let updated = false;
 
         switch (userReply) {
-            case "1.1": config.AUTO_STATUS_SEEN = "true"; updated = "Auto Read Status ✅ ON"; break;
-            case "1.2": config.AUTO_STATUS_SEEN = "false"; updated = "Auto Read Status ❌ OFF"; break;
-            case "2.1": config.AUTO_STATUS_REPLY = "true"; updated = "Auto Reply Status ✅ ON"; break;
-            case "2.2": config.AUTO_STATUS_REPLY = "false"; updated = "Auto Reply Status ❌ OFF"; break;
-            case "3.1": config.AUTO_REPLY = "true"; updated = "Auto Reply ✅ ON"; break;
-            case "3.2": config.AUTO_REPLY = "false"; updated = "Auto Reply ❌ OFF"; break;
-            case "4.1": config.AUTO_STICKER = "true"; updated = "Auto Sticker ✅ ON"; break;
-            case "4.2": config.AUTO_STICKER = "false"; updated = "Auto Sticker ❌ OFF"; break;
-            case "5.1": config.AUTO_VOICE = "true"; updated = "Auto Voice ✅ ON"; break;
-            case "5.2": config.AUTO_VOICE = "false"; updated = "Auto Voice ❌ OFF"; break;
-            case "6.1": config.OWNER_REACT = "true"; updated = "Owner React ✅ ON"; break;
-            case "6.2": config.OWNER_REACT = "false"; updated = "Owner React ❌ OFF"; break;
-            case "7.1": config.CUSTOM_REACT = "true"; updated = "Custom React ✅ ON"; break;
-            case "7.2": config.CUSTOM_REACT = "false"; updated = "Custom React ❌ OFF"; break;
-            case "8.1": config.AUTO_REACT = "true"; updated = "Auto React ✅ ON"; break;
-            case "8.2": config.AUTO_REACT = "false"; updated = "Auto React ❌ OFF"; break;
-            case "9.1": config.DELETE_LINKS = "true"; updated = "Delete Links ✅ ON"; break;
-            case "9.2": config.DELETE_LINKS = "false"; updated = "Delete Links ❌ OFF"; break;
-            case "10.1": config.ANTI_LINK = "true"; updated = "Anti-Link ✅ ON"; break;
-            case "10.2": config.ANTI_LINK = "false"; updated = "Anti-Link ❌ OFF"; break;
-            case "10.3": config.ANTI_LINK = "false"; config.DELETE_LINKS = "false"; updated = "Anti-Link + Delete Links ❌ OFF"; break;
-            case "11.1": config.ANTI_BAD = "true"; updated = "Anti-Bad Words ✅ ON"; break;
-            case "11.2": config.ANTI_BAD = "false"; updated = "Anti-Bad Words ❌ OFF"; break;
-            case "12.1": config.AUTO_TYPING = "true"; updated = "Auto Typing ✅ ON"; break;
-            case "12.2": config.AUTO_TYPING = "false"; updated = "Auto Typing ❌ OFF"; break;
-            case "13.1": config.AUTO_RECORDING = "true"; updated = "Auto Recording ✅ ON"; break;
-            case "13.2": config.AUTO_RECORDING = "false"; updated = "Auto Recording ❌ OFF"; break;
-            case "14.1": config.ALWAYS_ONLINE = "true"; updated = "Always Online ✅ ON"; break;
-            case "14.2": config.ALWAYS_ONLINE = "false"; updated = "Always Online ❌ OFF"; break;
-            case "15.1": config.PUBLIC_MODE = "true"; updated = "Public Mode ✅ ON"; break;
-            case "15.2": config.PUBLIC_MODE = "false"; updated = "Public Mode ❌ OFF"; break;
-            case "16.1": config.READ_MESSAGE = "true"; updated = "Read Message ✅ ON"; break;
-            case "16.2": config.READ_MESSAGE = "false"; updated = "Read Message ❌ OFF"; break;
+            switch (userReply) {
+                case "1.1": config.AUTO_STATUS_SEEN = "true"; updated = "✅ *Auto Read Status ON*"; break;
+                case "1.2": config.AUTO_STATUS_SEEN = "false"; updated = "❌ *Auto Read Status OFF*"; break;
+
+                case "2.1": config.AUTO_STATUS_REPLY = "true"; updated = "✅ *Auto Reply Status ON*"; break;
+                case "2.2": config.AUTO_STATUS_REPLY = "false"; updated = "❌ *Auto Reply Status OFF*"; break;
+
+                case "3.1": config.AUTO_REPLY = "true"; updated = "✅ *Auto Reply ON*"; break;
+                case "3.2": config.AUTO_REPLY = "false"; updated = "❌ *Auto Reply OFF*"; break;
+
+                case "4.1": config.AUTO_STICKER = "true"; updated = "✅ *Auto Sticker ON*"; break;
+                case "4.2": config.AUTO_STICKER = "false"; updated = "❌ *Auto Sticker OFF*"; break;
+
+                case "5.1": config.AUTO_VOICE = "true"; updated = "✅ *Auto Voice ON*"; break;
+                case "5.2": config.AUTO_VOICE = "false"; updated = "❌ *Auto Voice OFF*"; break;
+
+                case "6.1": config.OWNER_REACT = "true"; updated = "✅ *Owner React ON*"; break;
+                case "6.2": config.OWNER_REACT = "false"; updated = "❌ *Owner React OFF*"; break;
+
+                case "7.1": config.CUSTOM_REACT = "true"; updated = "✅ *Custom React ON*"; break;
+                case "7.2": config.CUSTOM_REACT = "false"; updated = "❌ *Custom React OFF*"; break;
+
+                case "8.1": config.AUTO_REACT = "true"; updated = "✅ *Auto React ON*"; break;
+                case "8.2": config.AUTO_REACT = "false"; updated = "❌ *Auto React OFF*"; break;
+
+                case "9.1": config.DELETE_LINKS = "true"; updated = "✅ *Delete Links ON*"; break;
+                case "9.2": config.DELETE_LINKS = "false"; updated = "❌ *Delete Links OFF*"; break;
+
+                case "10.1": config.ANTI_LINK = "true"; updated = "✅ *Anti-Link ON*"; break;
+                case "10.2": config.ANTI_LINK = "false"; updated = "❌ *Anti-Link OFF*"; break;
+                case "10.3": config.ANTI_LINK = "false"; config.DELETE_LINKS = "false"; updated = "❌ *Anti-Link + Delete Links OFF*"; break;
+
+                case "11.1": config.ANTI_BAD = "true"; updated = "✅ *Anti-Bad Words ON*"; break;
+                case "11.2": config.ANTI_BAD = "false"; updated = "❌ *Anti-Bad Words OFF*"; break;
+
+                case "12.1": config.AUTO_TYPING = "true"; updated = "✅ *Auto Typing ON*"; break;
+                case "12.2": config.AUTO_TYPING = "false"; updated = "❌ *Auto Typing OFF*"; break;
+
+                case "13.1": config.AUTO_RECORDING = "true"; updated = "✅ *Auto Recording ON*"; break;
+                case "13.2": config.AUTO_RECORDING = "false"; updated = "❌ *Auto Recording OFF*"; break;
+
+                case "14.1": config.ALWAYS_ONLINE = "true"; updated = "✅ *Always Online ON*"; break;
+                case "14.2": config.ALWAYS_ONLINE = "false"; updated = "❌ *Always Online OFF*"; break;
+
+                case "15.1": config.PUBLIC_MODE = "true"; updated = "✅ *Public Mode ON*"; break;
+                case "15.2": config.PUBLIC_MODE = "false"; updated = "❌ *Public Mode OFF*"; break;
+
+                case "16.1": config.READ_MESSAGE = "true"; updated = "✅ *Read Message ON*"; break;
+                case "16.2": config.READ_MESSAGE = "false"; updated = "❌ *Read Message OFF*"; break;
         }
 
         if (updated) {
