@@ -161,7 +161,17 @@ cmd({
                 }
 
                 if (confirmMsg) {
-                    await conn.sendMessage(from, { text: confirmMsg }, { quoted: mek });
+                    await conn.sendMessage(from, {
+                        text: confirmMsg,
+                        contextInfo: {
+                            forwardingScore: 999,
+                            isForwarded: true,
+                            forwardedNewsletterMessageInfo: {
+                                newsletterJid: '120363419102725912@newsletter',
+                                newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒"
+                            }
+                        }
+                    }, { quoted: mek });
                 }
             }
         };
