@@ -73,7 +73,7 @@ cmd({
 ╰────────────────────
 *🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
-        // Send menu (Channel style)
+        // Send menu to user (channel style)
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu,
@@ -82,7 +82,7 @@ cmd({
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363419102725912@newsletter',
-                    newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒",
+                    newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒"
                 }
             }
         }, { quoted: mek });
@@ -106,57 +106,67 @@ cmd({
                 let confirmMsg = "";
 
                 const updates = {
-                    "1.1": ["AUTO_STATUS_SEEN", "true", "✅ Auto Read Status ENABLED"],
-                    "1.2": ["AUTO_STATUS_SEEN", "false", "❌ Auto Read Status DISABLED"],
-                    "2.1": ["AUTO_STATUS_REPLY", "true", "✅ Auto Reply Status ENABLED"],
-                    "2.2": ["AUTO_STATUS_REPLY", "false", "❌ Auto Reply Status DISABLED"],
-                    "3.1": ["AUTO_REPLY", "true", "✅ Auto Reply ENABLED"],
-                    "3.2": ["AUTO_REPLY", "false", "❌ Auto Reply DISABLED"],
-                    "4.1": ["AUTO_STICKER", "true", "✅ Auto Sticker ENABLED"],
-                    "4.2": ["AUTO_STICKER", "false", "❌ Auto Sticker DISABLED"],
-                    "5.1": ["AUTO_VOICE", "true", "✅ Auto Voice ENABLED"],
-                    "5.2": ["AUTO_VOICE", "false", "❌ Auto Voice DISABLED"],
-                    "6.1": ["OWNER_REACT", "true", "✅ Owner React ENABLED"],
-                    "6.2": ["OWNER_REACT", "false", "❌ Owner React DISABLED"],
-                    "7.1": ["CUSTOM_REACT", "true", "✅ Custom Reacts ENABLED"],
-                    "7.2": ["CUSTOM_REACT", "false", "❌ Custom Reacts DISABLED"],
-                    "8.1": ["AUTO_REACT", "true", "✅ Auto React ENABLED"],
-                    "8.2": ["AUTO_REACT", "false", "❌ Auto React DISABLED"],
-                    "9.1": ["DELETE_LINKS", "true", "✅ Delete Links ENABLED"],
-                    "9.2": ["DELETE_LINKS", "false", "❌ Delete Links DISABLED"],
-                    "10.1": ["ANTI_LINK", "true", "✅ Anti-Link ENABLED"],
-                    "10.2": ["ANTI_LINK", "false", "❌ Anti-Link DISABLED"],
-                    "11.1": ["ANTI_BAD", "true", "✅ Anti-Bad Words ENABLED"],
-                    "11.2": ["ANTI_BAD", "false", "❌ Anti-Bad Words DISABLED"],
-                    "12.1": ["AUTO_TYPING", "true", "✅ Auto Typing ENABLED"],
-                    "12.2": ["AUTO_TYPING", "false", "❌ Auto Typing DISABLED"],
-                    "13.1": ["AUTO_RECORDING", "true", "✅ Auto Recording ENABLED"],
-                    "13.2": ["AUTO_RECORDING", "false", "❌ Auto Recording DISABLED"],
-                    "14.1": ["ALWAYS_ONLINE", "true", "✅ Always Online ENABLED"],
-                    "14.2": ["ALWAYS_ONLINE", "false", "❌ Always Online DISABLED"],
-                    "15.1": ["PUBLIC_MODE", "true", "✅ Public Mode ENABLED"],
-                    "15.2": ["PUBLIC_MODE", "false", "❌ Public Mode DISABLED"],
-                    "16.1": ["READ_MESSAGE", "true", "✅ Read Message ENABLED"],
-                    "16.2": ["READ_MESSAGE", "false", "❌ Read Message DISABLED"],
+                    "1.1": ["AUTO_STATUS_SEEN", "true", "Auto Read Status ENABLED"],
+                    "1.2": ["AUTO_STATUS_SEEN", "false", "Auto Read Status DISABLED"],
+                    "2.1": ["AUTO_STATUS_REPLY", "true", "Auto Reply Status ENABLED"],
+                    "2.2": ["AUTO_STATUS_REPLY", "false", "Auto Reply Status DISABLED"],
+                    "3.1": ["AUTO_REPLY", "true", "Auto Reply ENABLED"],
+                    "3.2": ["AUTO_REPLY", "false", "Auto Reply DISABLED"],
+                    "4.1": ["AUTO_STICKER", "true", "Auto Sticker ENABLED"],
+                    "4.2": ["AUTO_STICKER", "false", "Auto Sticker DISABLED"],
+                    "5.1": ["AUTO_VOICE", "true", "Auto Voice ENABLED"],
+                    "5.2": ["AUTO_VOICE", "false", "Auto Voice DISABLED"],
+                    "6.1": ["OWNER_REACT", "true", "Owner React ENABLED"],
+                    "6.2": ["OWNER_REACT", "false", "Owner React DISABLED"],
+                    "7.1": ["CUSTOM_REACT", "true", "Custom Reacts ENABLED"],
+                    "7.2": ["CUSTOM_REACT", "false", "Custom Reacts DISABLED"],
+                    "8.1": ["AUTO_REACT", "true", "Auto React ENABLED"],
+                    "8.2": ["AUTO_REACT", "false", "Auto React DISABLED"],
+                    "9.1": ["DELETE_LINKS", "true", "Delete Links ENABLED"],
+                    "9.2": ["DELETE_LINKS", "false", "Delete Links DISABLED"],
+                    "10.1": ["ANTI_LINK", "true", "Anti-Link ENABLED"],
+                    "10.2": ["ANTI_LINK", "false", "Anti-Link DISABLED"],
+                    "11.1": ["ANTI_BAD", "true", "Anti-Bad Words ENABLED"],
+                    "11.2": ["ANTI_BAD", "false", "Anti-Bad Words DISABLED"],
+                    "12.1": ["AUTO_TYPING", "true", "Auto Typing ENABLED"],
+                    "12.2": ["AUTO_TYPING", "false", "Auto Typing DISABLED"],
+                    "13.1": ["AUTO_RECORDING", "true", "Auto Recording ENABLED"],
+                    "13.2": ["AUTO_RECORDING", "false", "Auto Recording DISABLED"],
+                    "14.1": ["ALWAYS_ONLINE", "true", "Always Online ENABLED"],
+                    "14.2": ["ALWAYS_ONLINE", "false", "Always Online DISABLED"],
+                    "15.1": ["PUBLIC_MODE", "true", "Public Mode ENABLED"],
+                    "15.2": ["PUBLIC_MODE", "false", "Public Mode DISABLED"],
+                    "16.1": ["READ_MESSAGE", "true", "Read Message ENABLED"],
+                    "16.2": ["READ_MESSAGE", "false", "Read Message DISABLED"],
                 };
 
                 if (updates[text]) {
                     const [key, value, message] = updates[text];
                     config[key] = value;
                     saveConfig();
-                    confirmMsg = message;
+                    confirmMsg = `⚙️ Setting Updated: *${message}*`;
                 } else {
                     confirmMsg = "❌ Invalid option. Use e.g. 5.1 or 5.2";
                 }
 
                 if (confirmMsg) {
-                    // Send confirm to Channel
+                    // Send confirm to channel
                     await conn.sendMessage(
                         '120363419102725912@newsletter',
-                        { text: confirmMsg }
+                        {
+                            text: confirmMsg,
+                            contextInfo: {
+                                forwardingScore: 999,
+                                isForwarded: true,
+                                forwardedNewsletterMessageInfo: {
+                                    newsletterJid: '120363419102725912@newsletter',
+                                    newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐔𝐏𝐃𝐀𝐓𝐄"
+                                }
+                            }
+                        }
                     );
 
-                    // Also reply to user
+                    // Reply to user
                     reply(confirmMsg);
                 }
             }
