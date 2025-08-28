@@ -1,32 +1,31 @@
 const fs = require('fs');
 const path = require('path');
-const config = require('../config');
 const { cmd } = require('../command');
 
 const SETTINGS_FILE = path.join(__dirname, '../settings.json');
 
-// Load or create
+// Load settings file or create default
 let settings = {};
 if (fs.existsSync(SETTINGS_FILE)) {
   settings = JSON.parse(fs.readFileSync(SETTINGS_FILE));
 } else {
   settings = {
-    AUTO_STATUS_SEEN: config.AUTO_STATUS_SEEN || "false",
-    AUTO_STATUS_REPLY: config.AUTO_STATUS_REPLY || "false",
-    AUTO_REPLY: config.AUTO_REPLY || "false",
-    AUTO_STICKER: config.AUTO_STICKER || "false",
-    AUTO_VOICE: config.AUTO_VOICE || "false",
-    OWNER_REACT: config.OWNER_REACT || "false",
-    CUSTOM_REACT: config.CUSTOM_REACT || "false",
-    AUTO_REACT: config.AUTO_REACT || "false",
-    DELETE_LINKS: config.DELETE_LINKS || "false",
-    ANTI_LINK: config.ANTI_LINK || "false",
-    ANTI_BAD: config.ANTI_BAD || "false",
-    AUTO_TYPING: config.AUTO_TYPING || "false",
-    AUTO_RECORDING: config.AUTO_RECORDING || "false",
-    ALWAYS_ONLINE: config.ALWAYS_ONLINE || "false",
-    PUBLIC_MODE: config.PUBLIC_MODE || "false",
-    READ_MESSAGE: config.READ_MESSAGE || "false"
+    AUTO_STATUS_SEEN: "false",
+    AUTO_STATUS_REPLY: "false",
+    AUTO_REPLY: "false",
+    AUTO_STICKER: "false",
+    AUTO_VOICE: "false",
+    OWNER_REACT: "false",
+    CUSTOM_REACT: "false",
+    AUTO_REACT: "false",
+    DELETE_LINKS: "false",
+    ANTI_LINK: "false",
+    ANTI_BAD: "false",
+    AUTO_TYPING: "false",
+    AUTO_RECORDING: "false",
+    ALWAYS_ONLINE: "false",
+    PUBLIC_MODE: "false",
+    READ_MESSAGE: "false"
   };
   fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
 }
@@ -39,6 +38,7 @@ function isEnabled(value) {
   return value && value.toString().toLowerCase() === "true";
 }
 
+// Map number replies to setting keys
 const settingMap = {
   "1.1": ["AUTO_STATUS_SEEN", "true"],
   "1.2": ["AUTO_STATUS_SEEN", "false"],
@@ -74,7 +74,7 @@ const settingMap = {
   "16.2": ["READ_MESSAGE", "false"]
 };
 
-// Menu generator
+// Menu text generator
 function getMenu() {
   return `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】* 〕─⊷
 ┃ *⚙️ SETTINGS MENU ⚙️*
@@ -142,30 +142,20 @@ async (conn, mek, m, { from, reply }) => {
   try {
     const body = (m.body || "").trim().toLowerCase();
 
-    // If reply is number code (1.1, 2.1 etc.)
+    // If user typed number reply like 1.1 / 2.2
     if (settingMap[body]) {
       const [key, val] = settingMap[body];
       settings[key] = val;
       saveSettings();
-      return await conn.sendMessage(from, { text: `✅ *${key.replace(/_/g, " ")}* is now ${val === "true" ? "ON ✅" : "OFF ❌"}` }, { quoted: mek });
+      return reply(`✅ *${key.replace(/_/g, " ")}* is now ${val === "true" ? "ON ✅" : "OFF ❌"}`);
     }
 
-    // Otherwise show menu
+    // If no number → Show menu
     await conn.sendMessage(
       from,
       {
         image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
-        caption: getMenu(),
-        contextInfo: {
-          mentionedJid: [m.sender],
-          forwardingScore: 999,
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363419102725912@newsletter',
-            newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒🥰",
-            serverMessageId: 143
-          }
-        }
+        caption: getMenu()
       },
       { quoted: mek }
     );
