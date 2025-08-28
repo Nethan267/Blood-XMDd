@@ -20,8 +20,15 @@ cmd({
     category: "menu",
     react: "⚙️",
     filename: __filename
-}, async (conn, mek, m, { from, reply }) => {
+}, async (conn, mek, m, { from, reply, sender }) => {
     try {
+        // 🔐 Only linked device can access settings
+        const botNumber = conn.user.id.split(":")[0].replace(/[^0-9]/g, "");
+        const senderNumber = sender.split("@")[0];
+        if (senderNumber !== botNumber) {
+            return reply("❌ You are *not authorized* to change settings! Only the linked device can.");
+        }
+
         const settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】 SETTINGS ⚙️* 〕─⊷
 ┃ 1️⃣ Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ ON" : "❌ OFF"}
 ┃    ➤ 1.1 ON | 1.2 OFF
@@ -101,6 +108,10 @@ cmd({
 
             const text = msg.message.extendedTextMessage.text.trim();
             const ctx = msg.message.extendedTextMessage.contextInfo;
+            const senderNum = msg.key.participant ? msg.key.participant.split("@")[0] : sender.split("@")[0];
+
+            // 🔐 Only linked device can update settings
+            if (senderNum !== botNumber) return;
 
             if (ctx && ctx.stanzaId === sentMsg.key.id) {
                 let confirmMsg = "";
@@ -150,7 +161,6 @@ cmd({
                 }
 
                 if (confirmMsg) {
-                    // Confirm msg as Channel Style
                     await conn.sendMessage(
                         from,
                         {
