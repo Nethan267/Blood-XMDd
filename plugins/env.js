@@ -22,66 +22,72 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
-        const settingsMenu = `╭─〔 *⚙️ BLOOD XMD SETTINGS ⚙️* 〕─⊷
-┃
+        const settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】 SETTINGS ⚙️* 〕─⊷
 ┃ 1️⃣ Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 1.1 ON | 1.2 OFF
+┃    ➤ 1.1 ON | 1.2 OFF
 ┃
 ┃ 2️⃣ Auto Reply Status: ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 2.1 ON | 2.2 OFF
+┃    ➤ 2.1 ON | 2.2 OFF
 ┃
 ┃ 3️⃣ Auto Reply: ${isEnabled(config.AUTO_REPLY) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 3.1 ON | 3.2 OFF
+┃    ➤ 3.1 ON | 3.2 OFF
 ┃
 ┃ 4️⃣ Auto Sticker: ${isEnabled(config.AUTO_STICKER) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 4.1 ON | 4.2 OFF
+┃    ➤ 4.1 ON | 4.2 OFF
 ┃
 ┃ 5️⃣ Auto Voice: ${isEnabled(config.AUTO_VOICE) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 5.1 ON | 5.2 OFF
+┃    ➤ 5.1 ON | 5.2 OFF
 ┃
 ┃ 6️⃣ Owner React: ${isEnabled(config.OWNER_REACT) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 6.1 ON | 6.2 OFF
+┃    ➤ 6.1 ON | 6.2 OFF
 ┃
 ┃ 7️⃣ Custom Reacts: ${isEnabled(config.CUSTOM_REACT) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 7.1 ON | 7.2 OFF
+┃    ➤ 7.1 ON | 7.2 OFF
 ┃
 ┃ 8️⃣ Auto React: ${isEnabled(config.AUTO_REACT) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 8.1 ON | 8.2 OFF
+┃    ➤ 8.1 ON | 8.2 OFF
 ┃
 ┃ 9️⃣ Delete Links: ${isEnabled(config.DELETE_LINKS) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 9.1 ON | 9.2 OFF
+┃    ➤ 9.1 ON | 9.2 OFF
 ┃
 ┃ 🔟 Anti-Link: ${isEnabled(config.ANTI_LINK) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 10.1 ON | 10.2 OFF
+┃    ➤ 10.1 ON | 10.2 OFF
 ┃
 ┃ 1️⃣1️⃣ Anti-Bad Words: ${isEnabled(config.ANTI_BAD) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 11.1 ON | 11.2 OFF
+┃    ➤ 11.1 ON | 11.2 OFF
 ┃
 ┃ 1️⃣2️⃣ Auto Typing: ${isEnabled(config.AUTO_TYPING) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 12.1 ON | 12.2 OFF
+┃    ➤ 12.1 ON | 12.2 OFF
 ┃
 ┃ 1️⃣3️⃣ Auto Recording: ${isEnabled(config.AUTO_RECORDING) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 13.1 ON | 13.2 OFF
+┃    ➤ 13.1 ON | 13.2 OFF
 ┃
 ┃ 1️⃣4️⃣ Always Online: ${isEnabled(config.ALWAYS_ONLINE) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 14.1 ON | 14.2 OFF
+┃    ➤ 14.1 ON | 14.2 OFF
 ┃
 ┃ 1️⃣5️⃣ Public Mode: ${isEnabled(config.PUBLIC_MODE) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 15.1 ON | 15.2 OFF
+┃    ➤ 15.1 ON | 15.2 OFF
 ┃
 ┃ 1️⃣6️⃣ Read Message: ${isEnabled(config.READ_MESSAGE) ? "✅ ON" : "❌ OFF"}
-┃     ➤ 16.1 ON | 16.2 OFF
-┃
+┃    ➤ 16.1 ON | 16.2 OFF
 ╰────────────────────
 *🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
-        // Send settings menu
+        // Send menu (Channel style)
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
-            caption: settingsMenu
+            caption: settingsMenu,
+            contextInfo: {
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒",
+                }
+            }
         }, { quoted: mek });
 
-        // Send audio after menu
+        // Audio
         await conn.sendMessage(from, {
             audio: { url: 'https://files.catbox.moe/310dic.aac' },
             mimetype: 'audio/mp4',
@@ -131,7 +137,7 @@ cmd({
                     "15.1": ["PUBLIC_MODE", "true", "✅ Public Mode ENABLED"],
                     "15.2": ["PUBLIC_MODE", "false", "❌ Public Mode DISABLED"],
                     "16.1": ["READ_MESSAGE", "true", "✅ Read Message ENABLED"],
-                    "16.2": ["READ_MESSAGE", "false", "❌ Read Message DISABLED"]
+                    "16.2": ["READ_MESSAGE", "false", "❌ Read Message DISABLED"],
                 };
 
                 if (updates[text]) {
@@ -140,15 +146,16 @@ cmd({
                     saveConfig();
                     confirmMsg = message;
                 } else {
-                    confirmMsg = "❌ Invalid option. Use e.g. 1.1 or 1.2";
+                    confirmMsg = "❌ Invalid option. Use e.g. 5.1 or 5.2";
                 }
 
-                if(confirmMsg) {
-                    // Send confirmation to channel
+                if (confirmMsg) {
+                    // Send confirm to Channel
                     await conn.sendMessage(
-                        '120363419102725912@newsletter', // replace with your channel ID
+                        '120363419102725912@newsletter',
                         { text: confirmMsg }
                     );
+
                     // Also reply to user
                     reply(confirmMsg);
                 }
