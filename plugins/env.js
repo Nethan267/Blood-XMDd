@@ -76,79 +76,92 @@ async (conn, mek, m, { from, quoted, reply }) => {
 *🔢 Reply with number e.g. 1.1 (ON) or 1.2 (OFF)*
 `;
 
-        // Send message with image + caption (Channel Forward Style)
+        // Send menu
         const sentMsg = await conn.sendMessage(
             from,
             {
-                image: { url: 'https://files.catbox.moe/a6wgig.jpg' }, // Image URL
-                caption: settingsMenu,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363419102725912@newsletter',
-                        newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒🥰",
-                        serverMessageId: 143
-                    }
-                }
+                image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
+                caption: settingsMenu
             },
             { quoted: mek }
         );
 
-        // Send audio file after menu
+        // Audio after menu
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/310dic.aac' }, // Audio URL
+            audio: { url: 'https://files.catbox.moe/310dic.aac' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
 
-        // Handle Replies
+        // Listen for replies
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
             if (!msg.message || !msg.message.extendedTextMessage) return;
 
-            const userReply = msg.message.extendedTextMessage.text.trim().toLowerCase();
-            if (msg.message.extendedTextMessage.contextInfo &&
-                msg.message.extendedTextMessage.contextInfo.stanzaId === sentMsg.key.id) {
+            const userReply = msg.message.extendedTextMessage.text.trim();
+            if (!(msg.message.extendedTextMessage.contextInfo &&
+                msg.message.extendedTextMessage.contextInfo.stanzaId === sentMsg.key.id)) return;
 
-                switch (userReply) {
-                    case "1.1": reply(".update AUTO_STATUS_SEEN:true"); break;
-                    case "1.2": reply(".update AUTO_STATUS_SEEN:false"); break;
-                    case "2.1": reply(".update AUTO_STATUS_REPLY:true"); break;
-                    case "2.2": reply(".update AUTO_STATUS_REPLY:false"); break;
-                    case "3.1": reply(".update AUTO_REPLY:true"); break;
-                    case "3.2": reply(".update AUTO_REPLY:false"); break;
-                    case "4.1": reply(".update AUTO_STICKER:true"); break;
-                    case "4.2": reply(".update AUTO_STICKER:false"); break;
-                    case "5.1": reply(".update AUTO_VOICE:true"); break;
-                    case "5.2": reply(".update AUTO_VOICE:false"); break;
-                    case "6.1": reply(".update OWNER_REACT:true"); break;
-                    case "6.2": reply(".update OWNER_REACT:false"); break;
-                    case "7.1": reply(".update CUSTOM_REACT:true"); break;
-                    case "7.2": reply(".update CUSTOM_REACT:false"); break;
-                    case "8.1": reply(".update AUTO_REACT:true"); break;
-                    case "8.2": reply(".update AUTO_REACT:false"); break;
-                    case "9.1": reply(".update DELETE_LINKS:true"); break;
-                    case "9.2": reply(".update DELETE_LINKS:false"); break;
-                    case "10.1": reply(".update ANTI_LINK:true"); break;
-                    case "10.2": reply(".update ANTI_LINK:false"); break;
-                    case "10.3": reply(".update ANTI_LINK:false"); reply(".update DELETE_LINKS:false"); break;
-                    case "11.1": reply(".update ANTI_BAD:true"); break;
-                    case "11.2": reply(".update ANTI_BAD:false"); break;
-                    case "12.1": reply(".update AUTO_TYPING:true"); break;
-                    case "12.2": reply(".update AUTO_TYPING:false"); break;
-                    case "13.1": reply(".update AUTO_RECORDING:true"); break;
-                    case "13.2": reply(".update AUTO_RECORDING:false"); break;
-                    case "14.1": reply(".update ALWAYS_ONLINE:true"); break;
-                    case "14.2": reply(".update ALWAYS_ONLINE:false"); break;
-                    case "15.1": reply(".update PUBLIC_MODE:true"); break;
-                    case "15.2": reply(".update PUBLIC_MODE:false"); break;
-                    case "16.1": reply(".update READ_MESSAGE:true"); break;
-                    case "16.2": reply(".update READ_MESSAGE:false"); break;
-                    default:
-                        reply("❌ Invalid option. Use e.g. 1.1 or 1.2");
-                }
+            let updated = false;
+
+            switch (userReply) {
+                case "1.1": config.AUTO_STATUS_SEEN = "true"; updated = "Auto Read Status ✅ ON"; break;
+                case "1.2": config.AUTO_STATUS_SEEN = "false"; updated = "Auto Read Status ❌ OFF"; break;
+
+                case "2.1": config.AUTO_STATUS_REPLY = "true"; updated = "Auto Reply Status ✅ ON"; break;
+                case "2.2": config.AUTO_STATUS_REPLY = "false"; updated = "Auto Reply Status ❌ OFF"; break;
+
+                case "3.1": config.AUTO_REPLY = "true"; updated = "Auto Reply ✅ ON"; break;
+                case "3.2": config.AUTO_REPLY = "false"; updated = "Auto Reply ❌ OFF"; break;
+
+                case "4.1": config.AUTO_STICKER = "true"; updated = "Auto Sticker ✅ ON"; break;
+                case "4.2": config.AUTO_STICKER = "false"; updated = "Auto Sticker ❌ OFF"; break;
+
+                case "5.1": config.AUTO_VOICE = "true"; updated = "Auto Voice ✅ ON"; break;
+                case "5.2": config.AUTO_VOICE = "false"; updated = "Auto Voice ❌ OFF"; break;
+
+                case "6.1": config.OWNER_REACT = "true"; updated = "Owner React ✅ ON"; break;
+                case "6.2": config.OWNER_REACT = "false"; updated = "Owner React ❌ OFF"; break;
+
+                case "7.1": config.CUSTOM_REACT = "true"; updated = "Custom React ✅ ON"; break;
+                case "7.2": config.CUSTOM_REACT = "false"; updated = "Custom React ❌ OFF"; break;
+
+                case "8.1": config.AUTO_REACT = "true"; updated = "Auto React ✅ ON"; break;
+                case "8.2": config.AUTO_REACT = "false"; updated = "Auto React ❌ OFF"; break;
+
+                case "9.1": config.DELETE_LINKS = "true"; updated = "Delete Links ✅ ON"; break;
+                case "9.2": config.DELETE_LINKS = "false"; updated = "Delete Links ❌ OFF"; break;
+
+                case "10.1": config.ANTI_LINK = "true"; updated = "Anti-Link ✅ ON"; break;
+                case "10.2": config.ANTI_LINK = "false"; updated = "Anti-Link ❌ OFF"; break;
+                case "10.3": config.ANTI_LINK = "false"; config.DELETE_LINKS = "false"; updated = "Anti-Link + Delete Links ❌ OFF"; break;
+
+                case "11.1": config.ANTI_BAD = "true"; updated = "Anti-Bad Words ✅ ON"; break;
+                case "11.2": config.ANTI_BAD = "false"; updated = "Anti-Bad Words ❌ OFF"; break;
+
+                case "12.1": config.AUTO_TYPING = "true"; updated = "Auto Typing ✅ ON"; break;
+                case "12.2": config.AUTO_TYPING = "false"; updated = "Auto Typing ❌ OFF"; break;
+
+                case "13.1": config.AUTO_RECORDING = "true"; updated = "Auto Recording ✅ ON"; break;
+                case "13.2": config.AUTO_RECORDING = "false"; updated = "Auto Recording ❌ OFF"; break;
+
+                case "14.1": config.ALWAYS_ONLINE = "true"; updated = "Always Online ✅ ON"; break;
+                case "14.2": config.ALWAYS_ONLINE = "false"; updated = "Always Online ❌ OFF"; break;
+
+                case "15.1": config.PUBLIC_MODE = "true"; updated = "Public Mode ✅ ON"; break;
+                case "15.2": config.PUBLIC_MODE = "false"; updated = "Public Mode ❌ OFF"; break;
+
+                case "16.1": config.READ_MESSAGE = "true"; updated = "Read Message ✅ ON"; break;
+                case "16.2": config.READ_MESSAGE = "false"; updated = "Read Message ❌ OFF"; break;
+
+                default:
+                    await reply("❌ Invalid option. Use e.g. 1.1 or 1.2");
+                    return;
+            }
+
+            if (updated) {
+                saveConfig();
+                await conn.sendMessage(from, { text: `✅ Setting Updated: ${updated}` }, { quoted: msg });
             }
         });
 
@@ -156,4 +169,4 @@ async (conn, mek, m, { from, quoted, reply }) => {
         console.log(err);
         reply(`Error: ${err.message}`);
     }
-});
+});                    
