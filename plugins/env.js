@@ -76,12 +76,22 @@ async (conn, mek, m, { from, quoted, reply }) => {
 *🔢 Reply with number e.g. 1.1 (ON) or 1.2 (OFF)*
 `;
 
-        // Send menu
-        const sentMsg = await conn.sendMessage(
+        // Send message with an image
+        await conn.sendMessage(
             from,
             {
-                image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
-                caption: settingsMenu
+                image: { url: 'https://files.catbox.moe/a6wgig.jpg' }, // Image URL
+                caption: envSettings,
+                contextInfo: {
+                    mentionedJid: [m.sender],
+                    forwardingScore: 999,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363419102725912@newsletter',
+                        newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒🥰",
+                        serverMessageId: 143
+                    }
+                }
             },
             { quoted: mek }
         );
