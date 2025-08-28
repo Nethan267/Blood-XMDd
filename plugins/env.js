@@ -25,8 +25,9 @@ cmd({
         // 🔐 Only linked device can access settings
         const botNumber = conn.user.id.split(":")[0].replace(/[^0-9]/g, "");
         const senderNumber = sender.split("@")[0];
+
         if (senderNumber !== botNumber) {
-            return reply("❌ You are *not authorized* to change settings! Only the linked device can.");
+            return reply("❌ You are *not authorized* to access or change settings! Only the linked device can.");
         }
 
         const settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】 SETTINGS ⚙️* 〕─⊷
@@ -80,7 +81,6 @@ cmd({
 ╰────────────────────
 *🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
-        // Send settings menu (Channel style)
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu,
@@ -101,7 +101,6 @@ cmd({
             ptt: true
         }, { quoted: mek });
 
-        // Listen for replies
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
             if (!msg.message || !msg.message.extendedTextMessage) return;
@@ -115,7 +114,6 @@ cmd({
 
             if (ctx && ctx.stanzaId === sentMsg.key.id) {
                 let confirmMsg = "";
-
                 const updates = {
                     "1.1": ["AUTO_STATUS_SEEN", "true", "Auto Read Status ENABLED"],
                     "1.2": ["AUTO_STATUS_SEEN", "false", "Auto Read Status DISABLED"],
