@@ -3,9 +3,9 @@ const { cmd } = require('../command');
 const fs = require('fs');
 const path = require('path');
 
-// Function to save config changes
+// Save config to file
 function saveConfig() {
-    const configPath = path.join(__dirname, '../config.js'); // adjust if config is a .json
+    const configPath = path.join(__dirname, '../config.js'); // adjust if config.js path differs
     fs.writeFileSync(configPath, 'module.exports = ' + JSON.stringify(config, null, 4));
 }
 
@@ -13,7 +13,7 @@ function isEnabled(value) {
     return value && value.toString().toLowerCase() === "true";
 }
 
-// Function to generate menu caption dynamically
+// Generate dynamic settings menu caption
 function settingsMenu() {
     return `╭〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】* 〕⊷
 ┃▸╭───────────
@@ -66,7 +66,7 @@ cmd({
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
-        // 1️⃣ Send menu message
+        // Send menu message
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu(),
@@ -82,23 +82,23 @@ cmd({
             }
         }, { quoted: mek });
 
-        // 2️⃣ Send audio after menu
+        // Send audio
         await conn.sendMessage(from, {
             audio: { url: 'https://files.catbox.moe/310dic.aac' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
 
-        // 3️⃣ Listen for replies and update
+        // Listen for user replies
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
             if (!msg.message?.extendedTextMessage) return;
 
             const userReply = msg.message.extendedTextMessage.text.trim().toLowerCase();
-
             if (msg.message.extendedTextMessage.contextInfo?.stanzaId !== sentMsg.key.id) return;
 
             let updated = false;
+
             switch (userReply) {
                 case "1.1": config.AUTO_STATUS_SEEN = "true"; updated = true; break;
                 case "1.2": config.AUTO_STATUS_SEEN = "false"; updated = true; break;
@@ -137,10 +137,13 @@ cmd({
 
             if (updated) {
                 saveConfig();
-                await conn.sendMessage(from, { text: `✅ Setting updated!` }, { quoted: mek });
+                await conn.sendMessage(from, { text: "✅ Setting updated!" }, { quoted: mek });
+
+                // Edit original menu message to refresh
                 await conn.sendMessage(from, {
                     image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
-                    caption: settingsMenu()
+                    caption: settingsMenu(),
+                    contextInfo: { mentionedJid: [m.sender] }
                 }, { quoted: mek });
             }
         });
