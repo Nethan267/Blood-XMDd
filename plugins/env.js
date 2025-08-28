@@ -73,7 +73,7 @@ cmd({
 ╰────────────────────
 *🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
-        // Send menu to user (channel style)
+        // Send settings menu (Channel style)
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu,
@@ -87,7 +87,7 @@ cmd({
             }
         }, { quoted: mek });
 
-        // Audio
+        // Audio (PTT)
         await conn.sendMessage(from, {
             audio: { url: 'https://files.catbox.moe/310dic.aac' },
             mimetype: 'audio/mp4',
@@ -150,9 +150,9 @@ cmd({
                 }
 
                 if (confirmMsg) {
-                    // Send confirm to channel
+                    // Confirm msg as Channel Style
                     await conn.sendMessage(
-                        '120363419102725912@newsletter',
+                        from,
                         {
                             text: confirmMsg,
                             contextInfo: {
@@ -163,11 +163,9 @@ cmd({
                                     newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐔𝐏𝐃𝐀𝐓𝐄"
                                 }
                             }
-                        }
+                        },
+                        { quoted: mek }
                     );
-
-                    // Reply to user
-                    reply(confirmMsg);
                 }
             }
         });
