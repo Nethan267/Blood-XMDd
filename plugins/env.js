@@ -25,9 +25,8 @@ cmd({
         // 🔐 Only linked device can access settings
         const botNumber = conn.user.id.split(":")[0].replace(/[^0-9]/g, "");
         const senderNumber = sender.split("@")[0];
-
         if (senderNumber !== botNumber) {
-            return reply("❌ You are *not authorized* to access or change settings! Only the linked device can.");
+            return reply("❌ You are *not authorized* to change settings! Only the linked device can.");
         }
 
         const settingsMenu = `╭─〔 *【𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃】 SETTINGS ⚙️* 〕─⊷
@@ -81,6 +80,7 @@ cmd({
 ╰────────────────────
 *🔢 Reply with number e.g. 5.1 (ON) or 5.2 (OFF)*`;
 
+        // Send settings menu
         const sentMsg = await conn.sendMessage(from, {
             image: { url: 'https://files.catbox.moe/a6wgig.jpg' },
             caption: settingsMenu,
@@ -94,26 +94,28 @@ cmd({
             }
         }, { quoted: mek });
 
-        // Audio (PTT)
+        // Audio
         await conn.sendMessage(from, {
             audio: { url: 'https://files.catbox.moe/310dic.aac' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
 
-        conn.ev.on('messages.upsert', async (msgUpdate) => {
+        // ✅ Temporary listener only for owner reply
+        const listener = async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
             if (!msg.message || !msg.message.extendedTextMessage) return;
 
             const text = msg.message.extendedTextMessage.text.trim();
             const ctx = msg.message.extendedTextMessage.contextInfo;
-            const senderNum = msg.key.participant ? msg.key.participant.split("@")[0] : sender.split("@")[0];
+            const replySender = msg.key.participant ? msg.key.participant.split("@")[0] : msg.key.remoteJid.split("@")[0];
 
-            // 🔐 Only linked device can update settings
-            if (senderNum !== botNumber) return;
+            // 🔐 Reject if not owner
+            if (replySender !== botNumber) return;
 
             if (ctx && ctx.stanzaId === sentMsg.key.id) {
                 let confirmMsg = "";
+
                 const updates = {
                     "1.1": ["AUTO_STATUS_SEEN", "true", "Auto Read Status ENABLED"],
                     "1.2": ["AUTO_STATUS_SEEN", "false", "Auto Read Status DISABLED"],
@@ -159,24 +161,17 @@ cmd({
                 }
 
                 if (confirmMsg) {
-                    await conn.sendMessage(
-                        from,
-                        {
-                            text: confirmMsg,
-                            contextInfo: {
-                                forwardingScore: 999,
-                                isForwarded: true,
-                                forwardedNewsletterMessageInfo: {
-                                    newsletterJid: '120363419102725912@newsletter',
-                                    newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐔𝐏𝐃𝐀𝐓𝐄"
-                                }
-                            }
-                        },
-                        { quoted: mek }
-                    );
+                    await conn.sendMessage(from, { text: confirmMsg }, { quoted: mek });
                 }
             }
-        });
+        };
+
+        conn.ev.on("messages.upsert", listener);
+
+        // Optional: remove listener after 2 minutes (avoid leaks)
+        setTimeout(() => {
+            conn.ev.off("messages.upsert", listener);
+        }, 120000);
 
     } catch (err) {
         console.log(err);
