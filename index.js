@@ -45,7 +45,7 @@ const Crypto = require('crypto')
 const path = require('path')
 const prefix = config.PREFIX
 
-const ownerNumber = ['94703322089']
+const ownerNumber = ['94761332610']
 
 const tempDir = path.join(os.tmpdir(), 'cache-temp')
 if (!fs.existsSync(tempDir)) {
@@ -334,8 +334,8 @@ async function connectToWA() {
       }
       
       //================ownerreact==============
-      if (senderNumber.includes("94703322089") && !isReact) {
-        const reactions = ["👑"]
+      if (senderNumber.includes("9476133261") && !isReact) {
+        const reactions = ["🫟"]
         const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]
         m.react(randomReaction)
       }
