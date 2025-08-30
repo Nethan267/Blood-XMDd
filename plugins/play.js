@@ -35,7 +35,7 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: CHANNEL_JID,
+                  newsletterJid: "120363419102725912@newsletter"
                   newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐀𝐋𝐈𝐕𝐄 🥵"
                 }
               }
