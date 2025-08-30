@@ -28,22 +28,23 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
               mentions: [call.from]
             });
 
-            // 🔹 Forward message + audio to channel
-            const audioPath = path.join(__dirname, "./media/anticall-warning.ogg");
-            await conn.sendMessage(CHANNEL_JID, {
-              audio: { url: audioPath },
-              mimetype: "audio/ogg; codecs=opus",
-              ptt: true,
-              caption: `⚠️ Blocked Call Alert!\nFrom: wa.me/${call.from.split("@")[0]}`,
-              contextInfo: {
+                   // Send image + caption + audio combined
+        await conn.sendMessage(from, { 
+            image: { url: `https://files.catbox.moe/xbpir9.jpg` },  
+            caption: status,
+            contextInfo: {
+                mentionedJid: [m.sender],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: "120363419102725912@newsletter"
-                  newsletterName: "⚠️ AntiCall Alert"
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐀𝐋𝐈𝐕𝐄 🥵',
+                    serverMessageId: 143
+                   }
                 }
-              }
-            });
+            },
+            { quoted: verifiedContact }
+        );
 
             // Remove caller after 10 mins
             setTimeout(() => recentCallers.delete(call.from), 10 * 60 * 1000);
