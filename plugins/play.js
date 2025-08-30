@@ -24,7 +24,7 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
 
             // 🔹 Warning to caller
             await conn.sendMessage(call.from, {
-              text: "```Hii this is CASEYRHODES-XMD a Personal Assistant!! Sorry, we cannot receive calls now. Contact the owner via chat.``` ⚠️",
+              text: "```Hii this is BLOOD-XMD a Personal Assistant!! Sorry, we cannot receive calls now. Contact the owner via chat.``` ⚠️",
               mentions: [call.from]
             });
 
@@ -39,7 +39,7 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: CHANNEL_JID,
+                  newsletterJid: "120363419102725912@newsletter"
                   newsletterName: "⚠️ AntiCall Alert"
                 }
               }
