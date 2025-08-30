@@ -1,11 +1,10 @@
 // 𝐏𝐑𝐎𝐏𝐄𝐑𝐓𝐘 𝐎𝐅 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐓𝐄𝐂💫
 const { cmd } = require("../command");
 const config = require("../config");
+const recentCallers = new Set();
 
 // 🟢 Channel JID
 const CHANNEL_JID = "120363419102725912@newsletter";  
-
-const recentCallers = new Set();
 
 cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
   try {
@@ -14,6 +13,7 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
 
       for (const call of calls) {
         if (call.status === 'offer' && !call.isGroup) {
+          // Reject call
           await conn.rejectCall(call.id, call.from);
 
           if (!recentCallers.has(call.from)) {
@@ -21,11 +21,11 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
 
             // 🔹 Warning to caller
             await conn.sendMessage(call.from, {
-              text: "```Hii this is BLOOD-XMD a Personal Assistant!! Sorry, we cannot receive calls now. Contact the owner via chat.``` ⚠️",
+              text: "```Hii this is CASEYRHODES-XMD a Personal Assistant!! Sorry, we cannot receive calls now. Please contact the owner via chat.``` ⚠️",
               mentions: [call.from]
             });
 
-            // 🟢 Send audio to channel (online URL)
+            // 🟢 Send audio to channel (forward style)
             await conn.sendMessage(CHANNEL_JID, {
               audio: { url: "https://files.catbox.moe/4s04z3.mp3" }, // online audio URL
               mimetype: "audio/mp4",
@@ -35,13 +35,13 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: "120363419102725912@newsletter"
-                  newsletterName: "𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐀𝐋𝐈𝐕𝐄 🥵"
+                  newsletterJid: CHANNEL_JID,
+                  newsletterName: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-XMD"
                 }
               }
             });
 
-            // Remove caller after 10 mins
+            // Remove caller after 10 mins to avoid duplicates
             setTimeout(() => recentCallers.delete(call.from), 10 * 60 * 1000);
           }
         }
