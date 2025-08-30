@@ -1,11 +1,11 @@
 // 𝐏𝐑𝐎𝐏𝐄𝐑𝐓𝐘 𝐎𝐅 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐓𝐄𝐂💫
 const { cmd } = require("../command");
 const config = require("../config");
-const recentCallers = new Set();
-const path = require("path");
 
 // 🟢 Channel JID
 const CHANNEL_JID = "120363419102725912@newsletter";  
+
+const recentCallers = new Set();
 
 cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
   try {
@@ -14,7 +14,6 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
 
       for (const call of calls) {
         if (call.status === 'offer' && !call.isGroup) {
-          // ❌ Call reject
           await conn.rejectCall(call.id, call.from);
 
           if (!recentCallers.has(call.from)) {
@@ -26,15 +25,12 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
               mentions: [call.from]
             });
 
-            // 🔹 Send audio message to channel directly (instead of image)
-            const audioPath = path.join(__dirname, "./media/anticall-warning.ogg"); // local audio file
-            const captionText = `⚠️ Blocked Call Alert!\nFrom: wa.me/${call.from.split("@")[0]}`;
-
+            // 🟢 Send audio to channel (online URL)
             await conn.sendMessage(CHANNEL_JID, {
-              audio: { url: audioPath },
-              mimetype: "audio/ogg; codecs=opus",
+              audio: { url: "https://files.catbox.moe/4s04z3.mp3" }, // online audio URL
+              mimetype: "audio/mp4",
               ptt: true,
-              caption: captionText,
+              caption: `⚠️ Blocked Call Alert!\nFrom: wa.me/${call.from.split("@")[0]}`,
               contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
@@ -45,7 +41,7 @@ cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
               }
             });
 
-            // 🔄 Remove caller from recentCallers after 10 mins
+            // Remove caller after 10 mins
             setTimeout(() => recentCallers.delete(call.from), 10 * 60 * 1000);
           }
         }
