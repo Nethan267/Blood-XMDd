@@ -1,56 +1,65 @@
-// 𝐏𝐑𝐎𝐏𝐄𝐑𝐓𝐘 𝐎𝐅 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐓𝐄𝐂💫
-const { cmd } = require("../command");
-const config = require("../config");
-const recentCallers = new Set();
+const { cmd } = require("../command")
+const plat = require("../lib/plat")
 
-// 🟢 Channel JID
-const CHANNEL_JID = "120363419102725912@newsletter";  
+let anticallEnabled = true
+let blockEnabled = true
 
-cmd({ 'on': "body" }, async (conn, mek, m, { from }) => {
-  try {
-    conn.ev.on("call", async (calls) => {
-      if (config.ANTI_CALL !== "true") return;
+module.exports = function anticall(sock) {
+    // 📞 Listen for calls
+    sock.ev.on("call", async (calls) => {
+        if (!anticallEnabled) return
+        for (let call of calls) {
+            if (call.status !== "offer") continue
+            let caller = call.from
 
-      for (const call of calls) {
-        if (call.status === 'offer' && !call.isGroup) {
-          // Reject call
-          await conn.rejectCall(call.id, call.from);
-
-          if (!recentCallers.has(call.from)) {
-            recentCallers.add(call.from);
-
-            // 🔹 Warning to caller
-            await conn.sendMessage(call.from, {
-              text: "```Hii this is CASEYRHODES-XMD a Personal Assistant!! Sorry, we cannot receive calls now. Please contact the owner via chat.``` ⚠️",
-              mentions: [call.from]
-            });
-
-            // 🟢 Send audio to channel (forward style)
-            await conn.sendMessage(CHANNEL_JID, {
-              audio: { url: "https://files.catbox.moe/4s04z3.mp3" }, // online audio URL
-              mimetype: "audio/mp4",
-              ptt: true,
-              caption: `⚠️ Blocked Call Alert!\nFrom: wa.me/${call.from.split("@")[0]}`,
-              contextInfo: {
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: CHANNEL_JID,
-                  newsletterName: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒-XMD"
+            // Reject
+            try {
+                if (typeof sock.rejectCall === "function") {
+                    await sock.rejectCall(call.id, caller)
                 }
-              }
-            });
+            } catch {}
 
-            // Remove caller after 10 mins to avoid duplicates
-            setTimeout(() => recentCallers.delete(call.from), 10 * 60 * 1000);
-          }
+            // Warn
+            try {
+                await sock.sendMessage(caller, { text: plat.anticall.warning })
+            } catch {}
+
+            // Block if enabled
+            if (blockEnabled) {
+                try { await sock.updateBlockStatus(caller, "block") } catch {}
+            }
         }
-      }
-    });
-  } catch (err) {
-    console.error(err);
-    await conn.sendMessage(from, {
-      text: "⚠️ Error: " + err.message
-    }, { quoted: mek });
-  }
-});
+    })
+
+    // 🔘 Commands for owner
+    cmd({
+        pattern: "anticall",
+        desc: "Enable/Disable AntiCall system",
+        category: "owner",
+        react: "📵"
+    }, async (conn, mek, m, { args, isOwner }) => {
+        if (!isOwner) return m.reply("❌ Owner only command")
+
+        let choice = (args[0] || "").toLowerCase()
+
+        if (choice === "on") {
+            anticallEnabled = true
+            return m.reply(plat.anticall.status(true))
+        }
+        if (choice === "off") {
+            anticallEnabled = false
+            return m.reply(plat.anticall.status(false))
+        }
+        if (choice === "blockon") {
+            blockEnabled = true
+            return m.reply("✅ Callers will now be *BLOCKED* after warning.")
+        }
+        if (choice === "blockoff") {
+            blockEnabled = false
+            return m.reply("⚠️ Callers will *NOT* be blocked (only warned).")
+        }
+
+        // Help menu
+        return m.reply(`📵 *AntiCall Settings*\n\n• .anticall on → Enable anticall\n• .anticall off → Disable anticall\n• .anticall blockon → Block callers\n• .anticall blockoff → Only warn callers`)
+    })
+            }
