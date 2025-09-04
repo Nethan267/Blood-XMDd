@@ -23,8 +23,8 @@ cmd({
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363302677217436@newsletter',
-                    newsletterName: '𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐔𝐏𝐃𝐀𝐓𝐄𝐒',
+                    newsletterJid: '120363419102725912@newsletter',
+                    newsletterName: '𝐁𝐋𝐎𝐎𝐃 𝐗𝐌𝐃 𝐔𝐏𝐃𝐀𝐓𝐄𝐒',
                     serverMessageId: 143
                 }
             }
@@ -32,7 +32,7 @@ cmd({
 
         // Initial update check message with newsletter
         await conn.sendMessage(from, {
-            text: "🔍 *Checking for CASEYRHODES-XMD updates...*",
+            text: "🔍 *Checking for BLOOD-XMD updates...*",
             ...newsletterConfig
         }, { quoted: mek });
 
@@ -43,14 +43,14 @@ cmd({
 
         if (latestCommitHash === currentHash) {
             return await conn.sendMessage(from, {
-                text: "✅ *Your CASEYRHODES-XMD bot is already up-to-date!*",
+                text: "✅ *Your BLOOD-XMD bot is already up-to-date!*",
                 ...newsletterConfig
             }, { quoted: mek });
         }
 
         // Update progress message
         await conn.sendMessage(from, {
-            text: "🚀 *Updating CASEYRHODES-XMD Bot...*\n\n_This may take a few moments..._",
+            text: "🚀 *Updating BLOOD-XMD Bot...*\n\n_This may take a few moments..._",
             ...newsletterConfig
         }, { quoted: mek });
 
@@ -59,7 +59,7 @@ cmd({
         const { data: zipData } = await axios.get("https://github.com/BLOOD-MAIN/Blood-XMD/archive/main.zip", { 
             responseType: "arraybuffer",
             headers: {
-                'User-Agent': 'CASEYRHODES-XMD-Bot'
+                'User-Agent': 'BLOOD-XMD-Bot'
             }
         });
         fs.writeFileSync(zipPath, zipData);
@@ -97,7 +97,7 @@ cmd({
                 url: "https://i.ibb.co/wN6Gw0ZF/lordcasey.jpg",
                 mimetype: "image/jpeg"
             },
-            caption: "✅ *Update complete!*\n\n_Restarting the bot to apply changes..._\n\n⚡ Powered by CASEYRHODES-TECH",
+            caption: "✅ *Update complete!*\n\n_Restarting the bot to apply changes..._\n\n⚡ Powered by BLOOD-XMD",
             ...newsletterConfig
         }, { quoted: mek });
 
