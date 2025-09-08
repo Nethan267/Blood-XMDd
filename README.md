@@ -1,6 +1,6 @@
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=70&pause=500&color=pink&center=true&width=1150&height=200&lines=PLEASE-FORK-STAR-BOT-REPO" alt="Typing SVG" /></a>
   </div>
-<a><img src='https://files.catbox.moe/38h6qg.jpg'/></a>
+<a><img src='https://files.catbox.moe/36nkux.jpg'/></a>
 
 <p align="center">
   <a href="https://github.com/blood021"><img title="Developer" src="https://img.shields.io/badge/Author-BLOOD%20MD-FF00FF.svg?style=big-square&logo=github" /></a>
